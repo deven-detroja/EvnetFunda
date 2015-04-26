@@ -1,0 +1,32 @@
+<p>
+  <strong>Account holder name:</strong>
+  <%= @bank_detail.account_holder_name %>
+</p>
+
+<p>
+  <strong>Account number:</strong>
+  <%= @bank_detail.account_number %>
+</p>
+
+<p>
+  <strong>Bank name:</strong>
+  <%= @bank_detail.bank_name %>
+</p>
+
+<p>
+  <strong>Branch:</strong>
+  <%= @bank_detail.branch %>
+</p>
+
+<p>
+  <strong>Ifci code:</strong>
+  <%= @bank_detail.ifci_code %>
+</p>
+
+<p>
+  <strong>Account type:</strong>
+  <%= @bank_detail.account_type %>
+</p>
+
+<%= link_to 'Edit', edit_bank_detail_path(@bank_detail) %> |
+<%= link_to 'Back', bank_details_path %>

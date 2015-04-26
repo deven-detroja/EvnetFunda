@@ -1,0 +1,49 @@
+<script
+
+></script>
+
+ <%= semantic_form_for @event_master, :input_html => {:multiple => true}   do |f| %>
+  
+
+  <div class="field">
+    <%= f.input :title %>
+  </div>
+  <div class="field">
+    <%= f.input :url %>
+  </div>
+  <div class="field">
+    <%= f.input :description %>
+  </div>
+  <div class="field">
+    <%= f.input :capacity %>
+  </div>
+  <div class="field">
+    <%= f.input :private %>
+  </div>
+  <div class="field">
+  	<%= f.semantic_fields_for :event_category_mapping do |ecm| %>
+      <%= ecm.select :category, Category.all.collect {|s| [s.name, s.id]},:input_html => {:onchange => '$.get("/event_master/populate_subcategory")'}, :include_blank => '-Please Select-' %>
+	  <%= ecm.input :sub_category, :as => :check_boxes, :collection => SubCategory.all %>
+    <% end %>
+    
+  </div>
+  <div class="field">
+    <%= f.input :status %>
+  </div>
+  <div class="field">
+    <%= f.input :start_date %>
+  </div>
+  <div class="field">
+    <%= f.input :end_date %>
+  </div>	
+  <div class="field">
+    <%= f.input :max %>
+  </div>
+  <div class="field">
+    <%= f.input :image, :as => :file%>
+  </div>
+ <%= f.actions do %>
+      <%= f.action :submit, :as => :button %>
+      <%= f.action :cancel, :as => :link %>
+    <% end %>
+<% end %>

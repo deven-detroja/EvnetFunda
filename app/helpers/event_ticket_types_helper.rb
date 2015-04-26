@@ -1,0 +1,2 @@
+module EventTicketTypesHelper
+end

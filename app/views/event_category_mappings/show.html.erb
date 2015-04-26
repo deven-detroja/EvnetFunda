@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Categories:</strong>
+  <%= @event_category_mapping.categories %>
+</p>
+
+<p>
+  <strong>Sub categories:</strong>
+  <%= @event_category_mapping.sub_categories %>
+</p>
+
+<p>
+  <strong>Event master:</strong>
+  <%= @event_category_mapping.event_master %>
+</p>
+
+<%= link_to 'Edit', edit_event_category_mapping_path(@event_category_mapping) %> |
+<%= link_to 'Back', event_category_mappings_path %>

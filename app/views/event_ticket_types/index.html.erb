@@ -1,0 +1,33 @@
+<h1>Listing event_ticket_types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Min</th>
+      <th>Max</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @event_ticket_types.each do |event_ticket_type| %>
+      <tr>
+        <td><%= event_ticket_type.name %></td>
+        <td><%= event_ticket_type.description %></td>
+        <td><%= event_ticket_type.price %></td>
+        <td><%= event_ticket_type.min %></td>
+        <td><%= event_ticket_type.max %></td>
+        <td><%= link_to 'Show', event_ticket_type %></td>
+        <td><%= link_to 'Edit', edit_event_ticket_type_path(event_ticket_type) %></td>
+        <td><%= link_to 'Destroy', event_ticket_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event ticket type', new_event_ticket_type_path %>

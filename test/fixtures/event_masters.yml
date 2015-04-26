@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  url: MyString
+  description: MyString
+  capacity: 1
+  private: false
+  category: 1
+  sub_category: 1
+  status: 1
+  start_date: 2015-03-23
+  end_date: 2015-03-23
+  max: 1
+
+two:
+  title: MyString
+  url: MyString
+  description: MyString
+  capacity: 1
+  private: false
+  category: 1
+  sub_category: 1
+  status: 1
+  start_date: 2015-03-23
+  end_date: 2015-03-23
+  max: 1

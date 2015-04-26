@@ -1,0 +1,17 @@
+<p>
+  <strong>Name:</strong>
+  <%= @status_master.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @status_master.description %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @status_master.active %>
+</p>
+
+<%= link_to 'Edit', edit_status_master_path(@status_master) %> |
+<%= link_to 'Back', status_masters_path %>

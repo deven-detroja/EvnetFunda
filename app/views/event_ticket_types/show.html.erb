@@ -1,0 +1,27 @@
+<p>
+  <strong>Name:</strong>
+  <%= @event_ticket_type.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event_ticket_type.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @event_ticket_type.price %>
+</p>
+
+<p>
+  <strong>Min:</strong>
+  <%= @event_ticket_type.min %>
+</p>
+
+<p>
+  <strong>Max:</strong>
+  <%= @event_ticket_type.max %>
+</p>
+
+<%= link_to 'Edit', edit_event_ticket_type_path(@event_ticket_type) %> |
+<%= link_to 'Back', event_ticket_types_path %>

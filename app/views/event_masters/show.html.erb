@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @event_master.title %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @event_master.url %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event_master.description %>
+</p>
+
+<p>
+  <strong>Capacity:</strong>
+  <%= @event_master.capacity %>
+</p>
+
+<p>
+  <strong>Private:</strong>
+  <%= @event_master.private %>
+</p>
+
+
+<p>
+  <strong>Status:</strong>
+  <%= @event_master.status %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @event_master.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @event_master.end_date %>
+</p>
+
+<p>
+  <strong>Max:</strong>
+  <%= @event_master.max %>
+</p>
+
+<%= link_to 'Edit', edit_event_master_path(@event_master) %> |
+<%= link_to 'Back', event_masters_path %>

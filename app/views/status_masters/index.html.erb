@@ -1,0 +1,29 @@
+<h1>Listing status_masters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Active</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @status_masters.each do |status_master| %>
+      <tr>
+        <td><%= status_master.name %></td>
+        <td><%= status_master.description %></td>
+        <td><%= status_master.active %></td>
+        <td><%= link_to 'Show', status_master %></td>
+        <td><%= link_to 'Edit', edit_status_master_path(status_master) %></td>
+        <td><%= link_to 'Destroy', status_master, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Status master', new_status_master_path %>

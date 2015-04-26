@@ -1,0 +1,57 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <%= semantic_form_for resource do |f| %>
+
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.input  :email %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.input :password%>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.input :password_confirmation%>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.input :current_password%>
+  </div>
+  <div class="field">
+    <%= f.label :fullname %><br />
+    <%= f.input :fullname%>
+  </div>
+   <div class="field">
+    <%= f.label :mobile %><br />
+    <%= f.input :mobile%>
+  </div>
+  <div class="field">
+    <%= f.label :sex %><br />
+    
+	<%=f.input :sex,:as => :radio, :collection => ['Male', 'Female']%>
+	
+  </div>
+   <div class="field">
+    <%= f.label :dob %><br />
+    <%= f.input :dob %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>
