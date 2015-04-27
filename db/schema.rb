@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150401174927) do
+ActiveRecord::Schema.define(version: 20150427182350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,19 +62,26 @@ ActiveRecord::Schema.define(version: 20150401174927) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "event_masters", ["user_id"], name: "index_event_masters_on_user_id", using: :btree
 
   create_table "event_ticket_types", force: true do |t|
     t.string   "name"
-    t.integer  "description"
+    t.text     "description"
     t.integer  "price"
     t.integer  "min"
     t.integer  "max"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "event_master_id"
   end
+
+  add_index "event_ticket_types", ["event_master_id"], name: "index_event_ticket_types_on_event_master_id", using: :btree
 
   create_table "status_masters", force: true do |t|
     t.string   "name"

@@ -8,12 +8,13 @@ Rails.application.routes.draw do
 
   resources :event_masters do
     get "populate_subcategory"
+    resources :event_ticket_types  
   end
 
   devise_for :users
   resources :users
 
-  resources :event_ticket_types
+  
   resources :status_masters
   resources :bank_details #  devise_scope :user do
 #    get "sign_in", :to=> "devise/sessions#new"

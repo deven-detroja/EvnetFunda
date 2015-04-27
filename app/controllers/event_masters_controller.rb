@@ -17,6 +17,7 @@ class EventMastersController < ApplicationController
     p "current_usercurrent_usercurrent_usercurrent_user"
     p current_user
     p "current_usercurrent_usercurrent_usercurrent_user"
+    @event_master.event_category_mappings.build
     respond_with(@event_master)
   end
 
@@ -27,6 +28,7 @@ class EventMastersController < ApplicationController
     @event_master = current_user.event_masters.new(event_master_params)
     p "event_master_paramsevent_master_paramsevent_master_paramsevent_master_params"
     p event_master_params
+    p event_master_params[:event_category_mappings_attributes]
     @event_master.save
     respond_with(@event_master)
   end
@@ -51,6 +53,7 @@ class EventMastersController < ApplicationController
     end
 
     def event_master_params
-      params.require(:event_master).permit(:title, :url, :description, :capacity, :private, :status, :start_date, :end_date, :max, :image, :event_category_mappings => [:category_id,:event_master_id])
+      params.require(:event_master).permit(:title, :url, :description, :capacity, :private, :status, :start_date,
+       :end_date, :max, :image, :event_category_mappings_attributes => [:categories_id,:sub_categories_id=> [] ])
     end
 end

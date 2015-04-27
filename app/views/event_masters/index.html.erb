@@ -28,9 +28,11 @@
         <td><%= event_master.start_date %></td>
         <td><%= event_master.end_date %></td>
         <td><%= event_master.max %></td>
+        <td><%= image_tag event_master.image.url(:thumb) %></td>
         <td><%= link_to 'Show', event_master %></td>
         <td><%= link_to 'Edit', edit_event_master_path(event_master) %></td>
         <td><%= link_to 'Destroy', event_master, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Tickets', event_master_event_ticket_types_path(event_master) %></td>
       </tr>
     <% end %>
   </tbody>

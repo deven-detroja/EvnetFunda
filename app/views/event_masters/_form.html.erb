@@ -21,9 +21,9 @@
     <%= f.input :private %>
   </div>
   <div class="field">
-  	<%= f.semantic_fields_for :event_category_mapping do |ecm| %>
-      <%= ecm.select :category, Category.all.collect {|s| [s.name, s.id]},:input_html => {:onchange => '$.get("/event_master/populate_subcategory")'}, :include_blank => '-Please Select-' %>
-	  <%= ecm.input :sub_category, :as => :check_boxes, :collection => SubCategory.all %>
+  	<%= f.semantic_fields_for :event_category_mappings do |ecm| %>
+      <%= ecm.select :categories_id, Category.all.collect {|s| [s.name, s.id]},:input_html => {:onchange => '$.get("#")'}, :include_blank => '-Please Select-' %>
+	  <%= ecm.input :sub_categories_ids, :as => :check_boxes, :collection => SubCategory.all %>
     <% end %>
     
   </div>

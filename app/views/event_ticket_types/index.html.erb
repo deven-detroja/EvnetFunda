@@ -20,9 +20,9 @@
         <td><%= event_ticket_type.price %></td>
         <td><%= event_ticket_type.min %></td>
         <td><%= event_ticket_type.max %></td>
-        <td><%= link_to 'Show', event_ticket_type %></td>
-        <td><%= link_to 'Edit', edit_event_ticket_type_path(event_ticket_type) %></td>
-        <td><%= link_to 'Destroy', event_ticket_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', event_master_event_ticket_type_path(@event_master,event_ticket_type) %></td>
+        <td><%= link_to 'Edit', edit_event_master_event_ticket_type_path(@event_master,event_ticket_type) %></td>
+        <td><%= link_to 'Destroy', event_master_event_ticket_type_path(@event_master,event_ticket_type), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Event ticket type', new_event_ticket_type_path %>
+<%= link_to 'New Event ticket type', new_event_master_event_ticket_type_path %>
