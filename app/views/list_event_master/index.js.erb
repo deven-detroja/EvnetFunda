@@ -1,0 +1,2 @@
+$('#events').append('<%= escape_javascript render(@event_master) %>');
+$('.pagination').replaceWith('<%= escape_javascript will_paginate(@event_master) %>');
