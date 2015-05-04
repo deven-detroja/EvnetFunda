@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   
+  
+  root 'list_event_master#index'
+
+  get 'list_event_master/show'
+
   resources :event_category_mappings
 
   resources :sub_categories
@@ -17,18 +22,18 @@ Rails.application.routes.draw do
   
   resources :status_masters
   resources :bank_details #  devise_scope :user do
-#    get "sign_in", :to=> "devise/sessions#new"
+#  get "sign_in", :to=> "devise/sessions#new"
 #  end
 #  root :to=> redirect("devise/sessions#new")
-devise_scope :user do
-  authenticated :user do
-    root 'event_masters#index', :as=> :authenticated_root
-  end
+# devise_scope :user do
+#   authenticated :user do
+#     root 'event_masters#index', :as=> :authenticated_root
+#   end
 
-  unauthenticated do
-    root 'devise/sessions#new', :as=> :unauthenticated_root
-  end
-end
+#   unauthenticated do
+#     root 'devise/sessions#new', :as=> :unauthenticated_root
+#   end
+# end
 
 
 get '/sign_out' => 'users/sessions#destroy'
