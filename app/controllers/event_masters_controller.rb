@@ -1,5 +1,6 @@
 class EventMastersController < ApplicationController
   before_action :set_event_master, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   respond_to :html
 
@@ -14,9 +15,6 @@ class EventMastersController < ApplicationController
 
   def new
     @event_master = current_user.event_masters.new
-    p "current_usercurrent_usercurrent_usercurrent_user"
-    p current_user
-    p "current_usercurrent_usercurrent_usercurrent_user"
     @event_master.event_category_mappings.build
     respond_with(@event_master)
   end
@@ -26,9 +24,6 @@ class EventMastersController < ApplicationController
 
   def create
     @event_master = current_user.event_masters.new(event_master_params)
-    p "event_master_paramsevent_master_paramsevent_master_paramsevent_master_params"
-    p event_master_params
-    p event_master_params[:event_category_mappings_attributes]
     @event_master.save
     respond_with(@event_master)
   end
