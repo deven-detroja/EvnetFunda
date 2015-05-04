@@ -1,5 +1,9 @@
 class EventMaster < ActiveRecord::Base
   
+
+
+
+  
   belongs_to :user
   has_many :event_category_mappings
   has_many :event_ticket_types
