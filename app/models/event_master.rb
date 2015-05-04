@@ -3,7 +3,7 @@ class EventMaster < ActiveRecord::Base
 
 
 
-  
+
   belongs_to :user
   has_many :event_category_mappings
   has_many :event_ticket_types
@@ -26,4 +26,8 @@ class EventMaster < ActiveRecord::Base
   #do_not_validate_attachment_file_type :image
   #validates_attachment :image, :content_type=> { :content_type=> /\Aimage\/.*\Z/ }
   
+ def self.latest_events
+    order('updated_at asc, title desc')
+  end
+
 end
