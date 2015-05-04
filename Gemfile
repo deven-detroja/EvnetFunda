@@ -56,3 +56,4 @@ gem "paperclip", "~> 4.2"
 
 gem 'execjs'
 gem 'therubyracer'
+gem 'will_paginate', '~> 3.0.7'
