@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150427182350) do
+ActiveRecord::Schema.define(version: 20150430025325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,17 @@ ActiveRecord::Schema.define(version: 20150427182350) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "admin_contact_no"
+    t.string   "admin_contact_email"
+    t.string   "map_location"
+    t.boolean  "is_terms_and_condition"
+    t.text     "terms_and_condition"
+    t.boolean  "is_virtual"
+    t.integer  "display_order"
+    t.string   "banner_image_file_name"
+    t.string   "banner_image_content_type"
+    t.integer  "banner_image_file_size"
+    t.datetime "banner_image_updated_at"
   end
 
   add_index "event_masters", ["user_id"], name: "index_event_masters_on_user_id", using: :btree
@@ -126,6 +137,8 @@ ActiveRecord::Schema.define(version: 20150427182350) do
     t.integer  "failed_attempts",        default: 0
     t.string   "unlock_token"
     t.datetime "locked_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

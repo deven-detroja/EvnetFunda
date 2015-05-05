@@ -88,3 +88,190 @@ edit_event_master_event_ticket_type GET    /event_masters/:event_master_id/event
                  authenticated_root GET    /                                                                     event_masters#index
                unauthenticated_root GET    /                                                                     devise/sessions#new
                            sign_out GET    /sign_out(.:format)                                                   users/sessions#destroy
+                             Prefix Verb   URI Pattern                                                           Controller#Action
+                               root GET    /                                                                     list_event_master#index
+             list_event_master_show GET    /list_event_master/show(.:format)                                     list_event_master#show
+            event_category_mappings GET    /event_category_mappings(.:format)                                    event_category_mappings#index
+                                    POST   /event_category_mappings(.:format)                                    event_category_mappings#create
+         new_event_category_mapping GET    /event_category_mappings/new(.:format)                                event_category_mappings#new
+        edit_event_category_mapping GET    /event_category_mappings/:id/edit(.:format)                           event_category_mappings#edit
+             event_category_mapping GET    /event_category_mappings/:id(.:format)                                event_category_mappings#show
+                                    PATCH  /event_category_mappings/:id(.:format)                                event_category_mappings#update
+                                    PUT    /event_category_mappings/:id(.:format)                                event_category_mappings#update
+                                    DELETE /event_category_mappings/:id(.:format)                                event_category_mappings#destroy
+                     sub_categories GET    /sub_categories(.:format)                                             sub_categories#index
+                                    POST   /sub_categories(.:format)                                             sub_categories#create
+                   new_sub_category GET    /sub_categories/new(.:format)                                         sub_categories#new
+                  edit_sub_category GET    /sub_categories/:id/edit(.:format)                                    sub_categories#edit
+                       sub_category GET    /sub_categories/:id(.:format)                                         sub_categories#show
+                                    PATCH  /sub_categories/:id(.:format)                                         sub_categories#update
+                                    PUT    /sub_categories/:id(.:format)                                         sub_categories#update
+                                    DELETE /sub_categories/:id(.:format)                                         sub_categories#destroy
+                         categories GET    /categories(.:format)                                                 categories#index
+                                    POST   /categories(.:format)                                                 categories#create
+                       new_category GET    /categories/new(.:format)                                             categories#new
+                      edit_category GET    /categories/:id/edit(.:format)                                        categories#edit
+                           category GET    /categories/:id(.:format)                                             categories#show
+                                    PATCH  /categories/:id(.:format)                                             categories#update
+                                    PUT    /categories/:id(.:format)                                             categories#update
+                                    DELETE /categories/:id(.:format)                                             categories#destroy
+  event_master_populate_subcategory GET    /event_masters/:event_master_id/populate_subcategory(.:format)        event_masters#populate_subcategory
+    event_master_event_ticket_types GET    /event_masters/:event_master_id/event_ticket_types(.:format)          event_ticket_types#index
+                                    POST   /event_masters/:event_master_id/event_ticket_types(.:format)          event_ticket_types#create
+ new_event_master_event_ticket_type GET    /event_masters/:event_master_id/event_ticket_types/new(.:format)      event_ticket_types#new
+edit_event_master_event_ticket_type GET    /event_masters/:event_master_id/event_ticket_types/:id/edit(.:format) event_ticket_types#edit
+     event_master_event_ticket_type GET    /event_masters/:event_master_id/event_ticket_types/:id(.:format)      event_ticket_types#show
+                                    PATCH  /event_masters/:event_master_id/event_ticket_types/:id(.:format)      event_ticket_types#update
+                                    PUT    /event_masters/:event_master_id/event_ticket_types/:id(.:format)      event_ticket_types#update
+                                    DELETE /event_masters/:event_master_id/event_ticket_types/:id(.:format)      event_ticket_types#destroy
+                      event_masters GET    /event_masters(.:format)                                              event_masters#index
+                                    POST   /event_masters(.:format)                                              event_masters#create
+                   new_event_master GET    /event_masters/new(.:format)                                          event_masters#new
+                  edit_event_master GET    /event_masters/:id/edit(.:format)                                     event_masters#edit
+                       event_master GET    /event_masters/:id(.:format)                                          event_masters#show
+                                    PATCH  /event_masters/:id(.:format)                                          event_masters#update
+                                    PUT    /event_masters/:id(.:format)                                          event_masters#update
+                                    DELETE /event_masters/:id(.:format)                                          event_masters#destroy
+                   new_user_session GET    /users/sign_in(.:format)                                              devise/sessions#new
+                       user_session POST   /users/sign_in(.:format)                                              devise/sessions#create
+               destroy_user_session DELETE /users/sign_out(.:format)                                             devise/sessions#destroy
+                      user_password POST   /users/password(.:format)                                             devise/passwords#create
+                  new_user_password GET    /users/password/new(.:format)                                         devise/passwords#new
+                 edit_user_password GET    /users/password/edit(.:format)                                        devise/passwords#edit
+                                    PATCH  /users/password(.:format)                                             devise/passwords#update
+                                    PUT    /users/password(.:format)                                             devise/passwords#update
+           cancel_user_registration GET    /users/cancel(.:format)                                               devise/registrations#cancel
+                  user_registration POST   /users(.:format)                                                      devise/registrations#create
+              new_user_registration GET    /users/sign_up(.:format)                                              devise/registrations#new
+             edit_user_registration GET    /users/edit(.:format)                                                 devise/registrations#edit
+                                    PATCH  /users(.:format)                                                      devise/registrations#update
+                                    PUT    /users(.:format)                                                      devise/registrations#update
+                                    DELETE /users(.:format)                                                      devise/registrations#destroy
+                  user_confirmation POST   /users/confirmation(.:format)                                         devise/confirmations#create
+              new_user_confirmation GET    /users/confirmation/new(.:format)                                     devise/confirmations#new
+                                    GET    /users/confirmation(.:format)                                         devise/confirmations#show
+                        user_unlock POST   /users/unlock(.:format)                                               devise/unlocks#create
+                    new_user_unlock GET    /users/unlock/new(.:format)                                           devise/unlocks#new
+                                    GET    /users/unlock(.:format)                                               devise/unlocks#show
+                              users GET    /users(.:format)                                                      users#index
+                                    POST   /users(.:format)                                                      users#create
+                           new_user GET    /users/new(.:format)                                                  users#new
+                          edit_user GET    /users/:id/edit(.:format)                                             users#edit
+                               user GET    /users/:id(.:format)                                                  users#show
+                                    PATCH  /users/:id(.:format)                                                  users#update
+                                    PUT    /users/:id(.:format)                                                  users#update
+                                    DELETE /users/:id(.:format)                                                  users#destroy
+                     status_masters GET    /status_masters(.:format)                                             status_masters#index
+                                    POST   /status_masters(.:format)                                             status_masters#create
+                  new_status_master GET    /status_masters/new(.:format)                                         status_masters#new
+                 edit_status_master GET    /status_masters/:id/edit(.:format)                                    status_masters#edit
+                      status_master GET    /status_masters/:id(.:format)                                         status_masters#show
+                                    PATCH  /status_masters/:id(.:format)                                         status_masters#update
+                                    PUT    /status_masters/:id(.:format)                                         status_masters#update
+                                    DELETE /status_masters/:id(.:format)                                         status_masters#destroy
+                       bank_details GET    /bank_details(.:format)                                               bank_details#index
+                                    POST   /bank_details(.:format)                                               bank_details#create
+                    new_bank_detail GET    /bank_details/new(.:format)                                           bank_details#new
+                   edit_bank_detail GET    /bank_details/:id/edit(.:format)                                      bank_details#edit
+                        bank_detail GET    /bank_details/:id(.:format)                                           bank_details#show
+                                    PATCH  /bank_details/:id(.:format)                                           bank_details#update
+                                    PUT    /bank_details/:id(.:format)                                           bank_details#update
+                                    DELETE /bank_details/:id(.:format)                                           bank_details#destroy
+                           sign_out GET    /sign_out(.:format)                                                   users/sessions#destroy
+                             Prefix Verb   URI Pattern                                                           Controller#Action
+                               root GET    /                                                                     list_event_master#index
+            list_event_master_index GET    /list_event_master(.:format)                                          list_event_master#index
+                                    POST   /list_event_master(.:format)                                          list_event_master#create
+              new_list_event_master GET    /list_event_master/new(.:format)                                      list_event_master#new
+             edit_list_event_master GET    /list_event_master/:id/edit(.:format)                                 list_event_master#edit
+                  list_event_master GET    /list_event_master/:id(.:format)                                      list_event_master#show
+                                    PATCH  /list_event_master/:id(.:format)                                      list_event_master#update
+                                    PUT    /list_event_master/:id(.:format)                                      list_event_master#update
+                                    DELETE /list_event_master/:id(.:format)                                      list_event_master#destroy
+            event_category_mappings GET    /event_category_mappings(.:format)                                    event_category_mappings#index
+                                    POST   /event_category_mappings(.:format)                                    event_category_mappings#create
+         new_event_category_mapping GET    /event_category_mappings/new(.:format)                                event_category_mappings#new
+        edit_event_category_mapping GET    /event_category_mappings/:id/edit(.:format)                           event_category_mappings#edit
+             event_category_mapping GET    /event_category_mappings/:id(.:format)                                event_category_mappings#show
+                                    PATCH  /event_category_mappings/:id(.:format)                                event_category_mappings#update
+                                    PUT    /event_category_mappings/:id(.:format)                                event_category_mappings#update
+                                    DELETE /event_category_mappings/:id(.:format)                                event_category_mappings#destroy
+                     sub_categories GET    /sub_categories(.:format)                                             sub_categories#index
+                                    POST   /sub_categories(.:format)                                             sub_categories#create
+                   new_sub_category GET    /sub_categories/new(.:format)                                         sub_categories#new
+                  edit_sub_category GET    /sub_categories/:id/edit(.:format)                                    sub_categories#edit
+                       sub_category GET    /sub_categories/:id(.:format)                                         sub_categories#show
+                                    PATCH  /sub_categories/:id(.:format)                                         sub_categories#update
+                                    PUT    /sub_categories/:id(.:format)                                         sub_categories#update
+                                    DELETE /sub_categories/:id(.:format)                                         sub_categories#destroy
+                         categories GET    /categories(.:format)                                                 categories#index
+                                    POST   /categories(.:format)                                                 categories#create
+                       new_category GET    /categories/new(.:format)                                             categories#new
+                      edit_category GET    /categories/:id/edit(.:format)                                        categories#edit
+                           category GET    /categories/:id(.:format)                                             categories#show
+                                    PATCH  /categories/:id(.:format)                                             categories#update
+                                    PUT    /categories/:id(.:format)                                             categories#update
+                                    DELETE /categories/:id(.:format)                                             categories#destroy
+  event_master_populate_subcategory GET    /event_masters/:event_master_id/populate_subcategory(.:format)        event_masters#populate_subcategory
+    event_master_event_ticket_types GET    /event_masters/:event_master_id/event_ticket_types(.:format)          event_ticket_types#index
+                                    POST   /event_masters/:event_master_id/event_ticket_types(.:format)          event_ticket_types#create
+ new_event_master_event_ticket_type GET    /event_masters/:event_master_id/event_ticket_types/new(.:format)      event_ticket_types#new
+edit_event_master_event_ticket_type GET    /event_masters/:event_master_id/event_ticket_types/:id/edit(.:format) event_ticket_types#edit
+     event_master_event_ticket_type GET    /event_masters/:event_master_id/event_ticket_types/:id(.:format)      event_ticket_types#show
+                                    PATCH  /event_masters/:event_master_id/event_ticket_types/:id(.:format)      event_ticket_types#update
+                                    PUT    /event_masters/:event_master_id/event_ticket_types/:id(.:format)      event_ticket_types#update
+                                    DELETE /event_masters/:event_master_id/event_ticket_types/:id(.:format)      event_ticket_types#destroy
+                      event_masters GET    /event_masters(.:format)                                              event_masters#index
+                                    POST   /event_masters(.:format)                                              event_masters#create
+                   new_event_master GET    /event_masters/new(.:format)                                          event_masters#new
+                  edit_event_master GET    /event_masters/:id/edit(.:format)                                     event_masters#edit
+                       event_master GET    /event_masters/:id(.:format)                                          event_masters#show
+                                    PATCH  /event_masters/:id(.:format)                                          event_masters#update
+                                    PUT    /event_masters/:id(.:format)                                          event_masters#update
+                                    DELETE /event_masters/:id(.:format)                                          event_masters#destroy
+                   new_user_session GET    /users/sign_in(.:format)                                              devise/sessions#new
+                       user_session POST   /users/sign_in(.:format)                                              devise/sessions#create
+               destroy_user_session DELETE /users/sign_out(.:format)                                             devise/sessions#destroy
+                      user_password POST   /users/password(.:format)                                             devise/passwords#create
+                  new_user_password GET    /users/password/new(.:format)                                         devise/passwords#new
+                 edit_user_password GET    /users/password/edit(.:format)                                        devise/passwords#edit
+                                    PATCH  /users/password(.:format)                                             devise/passwords#update
+                                    PUT    /users/password(.:format)                                             devise/passwords#update
+           cancel_user_registration GET    /users/cancel(.:format)                                               devise/registrations#cancel
+                  user_registration POST   /users(.:format)                                                      devise/registrations#create
+              new_user_registration GET    /users/sign_up(.:format)                                              devise/registrations#new
+             edit_user_registration GET    /users/edit(.:format)                                                 devise/registrations#edit
+                                    PATCH  /users(.:format)                                                      devise/registrations#update
+                                    PUT    /users(.:format)                                                      devise/registrations#update
+                                    DELETE /users(.:format)                                                      devise/registrations#destroy
+                  user_confirmation POST   /users/confirmation(.:format)                                         devise/confirmations#create
+              new_user_confirmation GET    /users/confirmation/new(.:format)                                     devise/confirmations#new
+                                    GET    /users/confirmation(.:format)                                         devise/confirmations#show
+                        user_unlock POST   /users/unlock(.:format)                                               devise/unlocks#create
+                    new_user_unlock GET    /users/unlock/new(.:format)                                           devise/unlocks#new
+                                    GET    /users/unlock(.:format)                                               devise/unlocks#show
+                              users GET    /users(.:format)                                                      users#index
+                                    POST   /users(.:format)                                                      users#create
+                           new_user GET    /users/new(.:format)                                                  users#new
+                          edit_user GET    /users/:id/edit(.:format)                                             users#edit
+                               user GET    /users/:id(.:format)                                                  users#show
+                                    PATCH  /users/:id(.:format)                                                  users#update
+                                    PUT    /users/:id(.:format)                                                  users#update
+                                    DELETE /users/:id(.:format)                                                  users#destroy
+                     status_masters GET    /status_masters(.:format)                                             status_masters#index
+                                    POST   /status_masters(.:format)                                             status_masters#create
+                  new_status_master GET    /status_masters/new(.:format)                                         status_masters#new
+                 edit_status_master GET    /status_masters/:id/edit(.:format)                                    status_masters#edit
+                      status_master GET    /status_masters/:id(.:format)                                         status_masters#show
+                                    PATCH  /status_masters/:id(.:format)                                         status_masters#update
+                                    PUT    /status_masters/:id(.:format)                                         status_masters#update
+                                    DELETE /status_masters/:id(.:format)                                         status_masters#destroy
+                       bank_details GET    /bank_details(.:format)                                               bank_details#index
+                                    POST   /bank_details(.:format)                                               bank_details#create
+                    new_bank_detail GET    /bank_details/new(.:format)                                           bank_details#new
+                   edit_bank_detail GET    /bank_details/:id/edit(.:format)                                      bank_details#edit
+                        bank_detail GET    /bank_details/:id(.:format)                                           bank_details#show
+                                    PATCH  /bank_details/:id(.:format)                                           bank_details#update
+                                    PUT    /bank_details/:id(.:format)                                           bank_details#update
+                                    DELETE /bank_details/:id(.:format)                                           bank_details#destroy
+                           sign_out GET    /sign_out(.:format)                                                   users/sessions#destroy
