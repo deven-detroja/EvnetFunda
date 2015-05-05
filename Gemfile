@@ -48,7 +48,9 @@ gem 'devise'
 #gem "twitter-bootstrap-rails"
 
 gem 'bootstrap-sass', '~> 3.3.4'
+gem 'autoprefixer-rails'
 gem 'sass-rails', '>= 3.2'
+gem 'bootstrap-sass-extras'
  
 gem 'twilio-ruby', '~> 3.12' 
 gem "paperclip", "~> 4.2"
