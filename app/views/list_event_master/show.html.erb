@@ -1,2 +1,13 @@
 <h1>ListEventMaster#show</h1>
 <p>Find me in app/views/list_event_master/show.html.erb</p>
+<%= @event_master.title %>
+<%= @event_master.description %>
+<%= @event_master.url %>
+<% @event_master.event_ticket_types.each do | event_ticket_types | %>
+
+	<ul>
+		<%= event_ticket_types.name %> | <%= event_ticket_types.price %> |  <%= @event_master.end_date %> |  <%=event_ticket_types.description%> 
+		<%=select("Quantity", event_ticket_types.id, 1..10, {:include_blank => true}) %>
+	</ul>
+
+<%end%>

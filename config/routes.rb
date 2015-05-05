@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   
   root 'list_event_master#index'
 
-  get 'list_event_master/show'
+  #get 'list_event_master/show'
+  resources :list_event_master
 
   resources :event_category_mappings
 
