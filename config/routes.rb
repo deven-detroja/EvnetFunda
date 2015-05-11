@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   
+  mount Ckeditor::Engine => '/ckeditor'
   root 'list_event_master#index'
 
   #get 'list_event_master/show'

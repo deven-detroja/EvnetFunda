@@ -26762,3 +26762,3134 @@ Migrating to AddAttachmentBannerImageToEventMasters (20150430025325)
   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150430025325"]]
   [1m[35m (2.0ms)[0m  COMMIT
   [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentImageToEventMasters (20150430025323)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (116.0ms)[0m  [1mALTER TABLE "event_masters" ADD COLUMN "image_file_name" character varying(255)[0m
+PG::DuplicateColumn: ERROR:  column "image_file_name" of relation "event_masters" already exists
+: ALTER TABLE "event_masters" ADD COLUMN "image_file_name" character varying(255)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnsToEventMasters (20150430025324)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (176.6ms)[0m  [1mALTER TABLE "event_masters" ADD COLUMN "admin_contact_no" character varying(255)[0m
+  [1m[35m (1.5ms)[0m  ALTER TABLE "event_masters" ADD COLUMN "admin_contact_email" character varying(255)
+  [1m[36m (1.9ms)[0m  [1mALTER TABLE "event_masters" ADD COLUMN "map_location" character varying(255)[0m
+  [1m[35m (3.1ms)[0m  ALTER TABLE "event_masters" ADD COLUMN "is_terms_and_condition" boolean
+  [1m[36m (2.1ms)[0m  [1mALTER TABLE "event_masters" ADD COLUMN "terms_and_condition" text[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "event_masters" ADD COLUMN "is_virtual" boolean
+  [1m[36m (2.1ms)[0m  [1mALTER TABLE "event_masters" ADD COLUMN "display_order" integer[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150430025324"]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+Migrating to AddAttachmentBannerImageToEventMasters (20150430025325)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "event_masters" ADD COLUMN "banner_image_file_name" character varying(255)[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "event_masters" ADD COLUMN "banner_image_content_type" character varying(255)
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "event_masters" ADD COLUMN "banner_image_file_size" integer[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "event_masters" ADD COLUMN "banner_image_updated_at" timestamp
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150430025325"]]
+  [1m[35m (1.9ms)[0m  COMMIT
+Migrating to AddColumnsToEventTicketTypes (20150430025326)
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.9ms)[0m  ALTER TABLE "event_ticket_types" ADD COLUMN "quantity" integer
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "event_ticket_types" ADD COLUMN "start_time" timestamp[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "event_ticket_types" ADD COLUMN "end_time" timestamp
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "event_ticket_types" ADD COLUMN "display_order" integer[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150430025326"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.7ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 192.168.187.1 at 2015-05-10 17:51:08 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (58.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ListEventMasterController#index as HTML
+  [1m[35mEventMaster Load (95.5ms)[0m  SELECT  "event_masters".* FROM "event_masters"   ORDER BY updated_at asc, title desc LIMIT 10 OFFSET 0
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "event_masters"[0m
+  Rendered event_masters/_event_master.html.erb (81.1ms)
+  Rendered list_event_master/index.html.erb within layouts/application (697.5ms)
+Completed 200 OK in 22087ms (Views: 21693.1ms | ActiveRecord: 313.1ms)
+
+
+Started GET "/assets/_bootstrap-custom.css?body=1" for 192.168.187.1 at 2015-05-10 17:51:31 +0000
+
+
+Started GET "/assets/list_event_master.css?body=1" for 192.168.187.1 at 2015-05-10 17:51:31 +0000
+
+
+Started GET "/assets/event_masters.css?body=1" for 192.168.187.1 at 2015-05-10 17:51:31 +0000
+
+
+Started GET "/assets/event_category_mappings.css?body=1" for 192.168.187.1 at 2015-05-10 17:51:31 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 192.168.187.1 at 2015-05-10 17:51:31 +0000
+
+
+Started GET "/assets/application.css?body=1" for 192.168.187.1 at 2015-05-10 17:51:31 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.187.1 at 2015-05-10 17:51:31 +0000
+
+
+Started GET "/assets/sub_categories.css?body=1" for 192.168.187.1 at 2015-05-10 17:51:31 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:31 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:31 +0000
+
+
+Started GET "/assets/ckeditor/basepath.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:31 +0000
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:31 +0000
+
+
+Started GET "/assets/ckeditor/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:31 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:32 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:32 +0000
+
+
+Started GET "/assets/ckeditor-jquery.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:32 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:32 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:32 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:32 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:32 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:32 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:32 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:32 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:33 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:33 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:33 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:33 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:33 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:33 +0000
+
+
+Started GET "/assets/event_category_mappings.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:33 +0000
+
+
+Started GET "/assets/event_masters.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:33 +0000
+
+
+Started GET "/assets/sub_categories.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:33 +0000
+
+
+Started GET "/assets/list_event_master.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:33 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 17:51:33 +0000
+
+
+Started GET "/images/thumb/missing.png" for 192.168.187.1 at 2015-05-10 17:51:34 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/missing.png"):
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (16.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (193.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (353.0ms)
+
+
+Started GET "/event_masters/" for 192.168.187.1 at 2015-05-10 18:10:45 +0000
+Processing by EventMastersController#index as HTML
+Completed 401 Unauthorized in 99ms
+
+
+Started GET "/event_masters/" for 192.168.187.1 at 2015-05-10 18:10:45 +0000
+Processing by EventMastersController#index as HTML
+Completed 401 Unauthorized in 3ms
+
+
+Started GET "/users/sign_in" for 192.168.187.1 at 2015-05-10 18:10:45 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (6.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (333.2ms)
+Completed 200 OK in 1332ms (Views: 1204.9ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 18:10:47 +0000
+
+
+Started GET "/assets/ckeditor/basepath.js?body=1" for 192.168.187.1 at 2015-05-10 18:10:47 +0000
+
+
+Started GET "/assets/ckeditor/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:10:47 +0000
+
+
+Started GET "/assets/ckeditor-jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:10:47 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:10:47 +0000
+
+
+Started GET "/event_masters/" for 192.168.187.1 at 2015-05-10 18:11:34 +0000
+Processing by EventMastersController#index as HTML
+  [1m[35mEventMaster Load (1.0ms)[0m  SELECT "event_masters".* FROM "event_masters"
+  Rendered event_masters/index.html.erb within layouts/application (151.8ms)
+Completed 200 OK in 803ms (Views: 782.5ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/event_masters/" for 192.168.187.1 at 2015-05-10 18:11:35 +0000
+Processing by EventMastersController#index as HTML
+  [1m[36mEventMaster Load (1.0ms)[0m  [1mSELECT "event_masters".* FROM "event_masters"[0m
+  Rendered event_masters/index.html.erb within layouts/application (191.2ms)
+Completed 200 OK in 830ms (Views: 827.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/ckeditor-jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:11:36 +0000
+
+
+Started GET "/assets/ckeditor/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:11:36 +0000
+
+
+Started GET "/assets/ckeditor/basepath.js?body=1" for 192.168.187.1 at 2015-05-10 18:11:36 +0000
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 18:11:36 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:11:36 +0000
+
+
+Started GET "/images/thumb/missing.png" for 192.168.187.1 at 2015-05-10 18:11:37 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/missing.png"):
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (14.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (101.9ms)
+
+
+Started GET "/event_masters/27/edit" for 192.168.187.1 at 2015-05-10 18:11:40 +0000
+Processing by EventMastersController#edit as HTML
+  Parameters: {"id"=>"27"}
+  [1m[35mEventMaster Load (1.4ms)[0m  SELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1  [["id", 27]]
+Completed 401 Unauthorized in 17ms
+
+
+Started GET "/users/sign_in" for 192.168.187.1 at 2015-05-10 18:11:40 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 850ms (Views: 799.4ms | ActiveRecord: 5.8ms)
+
+
+Started POST "/users/sign_in" for 192.168.187.1 at 2015-05-10 18:11:44 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YJaYECd6roclRs185jeutil75p9zmas+UxdQdcMKux8=", "user"=>{"email"=>"jagdish.dasani@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (243.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jagdish.dasani@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (2.2ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3 WHERE "users"."id" = 1[0m  [["current_sign_in_at", "2015-05-10 18:11:45.530020"], ["last_sign_in_at", "2015-05-05 19:07:30.304932"], ["sign_in_count", 12]]
+  [1m[35m (1.8ms)[0m  COMMIT
+Redirected to http://eventfunda.com:3000/event_masters/27/edit
+Completed 302 Found in 889ms (ActiveRecord: 247.5ms)
+
+
+Started GET "/event_masters/27/edit" for 192.168.187.1 at 2015-05-10 18:11:45 +0000
+Processing by EventMastersController#edit as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mEventMaster Load (0.9ms)[0m  [1mSELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1[0m  [["id", 27]]
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEventCategoryMapping Load (49.4ms)[0m  [1mSELECT "event_category_mappings".* FROM "event_category_mappings"  WHERE "event_category_mappings"."event_master_id" = $1[0m  [["event_master_id", 27]]
+  [1m[35mCategory Load (19.8ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mSubCategory Load (4.1ms)[0m  [1mSELECT "sub_categories".* FROM "sub_categories"[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "sub_categories".* FROM "sub_categories"[0m
+  Rendered event_masters/_form.html.erb (729.8ms)
+  Rendered event_masters/edit.html.erb within layouts/application (736.3ms)
+Completed 200 OK in 1655ms (Views: 1555.4ms | ActiveRecord: 90.2ms)
+
+
+Started GET "/assets/ckeditor-jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:11:47 +0000
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 18:11:47 +0000
+
+
+Started GET "/assets/ckeditor/basepath.js?body=1" for 192.168.187.1 at 2015-05-10 18:11:47 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:11:47 +0000
+
+
+Started GET "/assets/ckeditor/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:11:47 +0000
+
+
+Started GET "/event_masters/27/edit" for 192.168.187.1 at 2015-05-10 18:12:04 +0000
+Processing by EventMastersController#edit as HTML
+  Parameters: {"id"=>"27"}
+  [1m[35mEventMaster Load (1.0ms)[0m  SELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1  [["id", 27]]
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEventCategoryMapping Load (0.7ms)[0m  SELECT "event_category_mappings".* FROM "event_category_mappings"  WHERE "event_category_mappings"."event_master_id" = $1  [["event_master_id", 27]]
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mSubCategory Load (1.0ms)[0m  SELECT "sub_categories".* FROM "sub_categories"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "sub_categories".* FROM "sub_categories"
+  Rendered event_masters/_form.html.erb (152.6ms)
+  Rendered event_masters/edit.html.erb within layouts/application (156.8ms)
+Completed 200 OK in 989ms (Views: 974.3ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/assets/event_category_mappings.css?body=1" for 192.168.187.1 at 2015-05-10 18:12:06 +0000
+
+
+Started GET "/assets/_bootstrap-custom.css?body=1" for 192.168.187.1 at 2015-05-10 18:12:06 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:12:06 +0000
+
+
+Started GET "/assets/application.css?body=1" for 192.168.187.1 at 2015-05-10 18:12:06 +0000
+
+
+Started GET "/assets/event_masters.css?body=1" for 192.168.187.1 at 2015-05-10 18:12:06 +0000
+
+
+Started GET "/assets/list_event_master.css?body=1" for 192.168.187.1 at 2015-05-10 18:12:06 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.187.1 at 2015-05-10 18:12:06 +0000
+
+
+Started GET "/assets/sub_categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:12:06 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:06 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:06 +0000
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:06 +0000
+
+
+Started GET "/assets/ckeditor/basepath.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:06 +0000
+
+
+Started GET "/assets/ckeditor/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:06 +0000
+
+
+Started GET "/assets/ckeditor-jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:06 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:06 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:06 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:06 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:07 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:07 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:07 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:07 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:07 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:07 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:07 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:07 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:07 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:07 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:07 +0000
+
+
+Started GET "/assets/event_category_mappings.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:07 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:07 +0000
+
+
+Started GET "/assets/event_masters.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:07 +0000
+
+
+Started GET "/assets/list_event_master.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:07 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:08 +0000
+
+
+Started GET "/assets/sub_categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:08 +0000
+
+
+Started GET "/event_masters/27/edit" for 192.168.187.1 at 2015-05-10 18:12:41 +0000
+Processing by EventMastersController#edit as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mEventMaster Load (1.0ms)[0m  [1mSELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1[0m  [["id", 27]]
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEventCategoryMapping Load (0.7ms)[0m  [1mSELECT "event_category_mappings".* FROM "event_category_mappings"  WHERE "event_category_mappings"."event_master_id" = $1[0m  [["event_master_id", 27]]
+  [1m[35mCategory Load (0.9ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mSubCategory Load (0.8ms)[0m  [1mSELECT "sub_categories".* FROM "sub_categories"[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "sub_categories".* FROM "sub_categories"[0m
+  Rendered event_masters/_form.html.erb (159.3ms)
+  Rendered event_masters/edit.html.erb within layouts/application (164.0ms)
+Completed 200 OK in 1121ms (Views: 1106.5ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/assets/categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:12:42 +0000
+
+
+Started GET "/assets/_bootstrap-custom.css?body=1" for 192.168.187.1 at 2015-05-10 18:12:42 +0000
+
+
+Started GET "/assets/event_category_mappings.css?body=1" for 192.168.187.1 at 2015-05-10 18:12:42 +0000
+
+
+Started GET "/assets/event_masters.css?body=1" for 192.168.187.1 at 2015-05-10 18:12:42 +0000
+
+
+Started GET "/assets/application.css?body=1" for 192.168.187.1 at 2015-05-10 18:12:42 +0000
+
+
+Started GET "/assets/list_event_master.css?body=1" for 192.168.187.1 at 2015-05-10 18:12:42 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.187.1 at 2015-05-10 18:12:42 +0000
+
+
+Started GET "/assets/sub_categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:12:42 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:42 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:43 +0000
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:43 +0000
+
+
+Started GET "/assets/ckeditor/basepath.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:43 +0000
+
+
+Started GET "/assets/ckeditor/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:43 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:43 +0000
+
+
+Started GET "/assets/ckeditor-jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:43 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:43 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:43 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:43 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:43 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:43 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:43 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:44 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:44 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:44 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:44 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:44 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:44 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:44 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:44 +0000
+
+
+Started GET "/assets/event_masters.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:44 +0000
+
+
+Started GET "/assets/event_category_mappings.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:44 +0000
+
+
+Started GET "/assets/list_event_master.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:44 +0000
+
+
+Started GET "/assets/sub_categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:44 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:12:44 +0000
+
+
+Started GET "/event_masters/27/edit" for 192.168.187.1 at 2015-05-10 18:13:52 +0000
+Processing by EventMastersController#edit as HTML
+  Parameters: {"id"=>"27"}
+  [1m[35mEventMaster Load (1.1ms)[0m  SELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1  [["id", 27]]
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEventCategoryMapping Load (1.0ms)[0m  SELECT "event_category_mappings".* FROM "event_category_mappings"  WHERE "event_category_mappings"."event_master_id" = $1  [["event_master_id", 27]]
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mSubCategory Load (1.2ms)[0m  SELECT "sub_categories".* FROM "sub_categories"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "sub_categories".* FROM "sub_categories"
+  Rendered event_masters/_form.html.erb (237.0ms)
+  Rendered event_masters/edit.html.erb within layouts/application (241.8ms)
+Completed 200 OK in 1169ms (Views: 1153.4ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/assets/_bootstrap-custom.css?body=1" for 192.168.187.1 at 2015-05-10 18:13:53 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:13:53 +0000
+
+
+Started GET "/assets/event_category_mappings.css?body=1" for 192.168.187.1 at 2015-05-10 18:13:53 +0000
+
+
+Started GET "/assets/application.css?body=1" for 192.168.187.1 at 2015-05-10 18:13:53 +0000
+
+
+Started GET "/assets/list_event_master.css?body=1" for 192.168.187.1 at 2015-05-10 18:13:53 +0000
+
+
+Started GET "/assets/event_masters.css?body=1" for 192.168.187.1 at 2015-05-10 18:13:53 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.187.1 at 2015-05-10 18:13:53 +0000
+
+
+Started GET "/assets/sub_categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:13:53 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:53 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:53 +0000
+
+
+Started GET "/assets/ckeditor/basepath.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:53 +0000
+
+
+Started GET "/assets/ckeditor/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:54 +0000
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:54 +0000
+
+
+Started GET "/assets/ckeditor-jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:54 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:54 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:54 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:54 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:54 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:54 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:54 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:54 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:54 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:54 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:54 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:55 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:55 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:55 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:55 +0000
+
+
+Started GET "/assets/event_category_mappings.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:55 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:55 +0000
+
+
+Started GET "/assets/event_masters.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:55 +0000
+
+
+Started GET "/assets/list_event_master.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:55 +0000
+
+
+Started GET "/assets/sub_categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:55 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:13:55 +0000
+
+
+Started GET "/assets/ckeditor/config.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:13:56 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/editor.css?t=F0RD" for 192.168.187.1 at 2015-05-10 18:13:56 +0000
+
+
+Started GET "/assets/ckeditor/lang/en.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:13:56 +0000
+
+
+Started GET "/assets/ckeditor/styles.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:13:57 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/icons.png" for 192.168.187.1 at 2015-05-10 18:13:57 +0000
+
+
+Started GET "/assets/ckeditor/contents.css?t=F0RD" for 192.168.187.1 at 2015-05-10 18:13:57 +0000
+
+
+Started GET "/assets/ckeditor/plugins/link/dialogs/link.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:14:11 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/dialog.css?t=F0RD" for 192.168.187.1 at 2015-05-10 18:14:11 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/images/close.png" for 192.168.187.1 at 2015-05-10 18:14:12 +0000
+
+
+Started GET "/assets/ckeditor/plugins/image/dialogs/image.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:14:17 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/images/lock.png" for 192.168.187.1 at 2015-05-10 18:14:18 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/images/refresh.png" for 192.168.187.1 at 2015-05-10 18:14:18 +0000
+
+
+Started GET "/event_masters/27/asfd" for 192.168.187.1 at 2015-05-10 18:14:42 +0000
+
+ActionController::RoutingError (No route matches [GET] "/event_masters/27/asfd"):
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (25.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.5ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (194.4ms)
+
+
+Started GET "/assets/ckeditor/plugins/image/images/noimage.png?t=F0RD" for 192.168.187.1 at 2015-05-10 18:14:43 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/images/lock-open.png" for 192.168.187.1 at 2015-05-10 18:14:43 +0000
+
+
+Started GET "/event_masters/27" for 192.168.187.1 at 2015-05-10 18:15:05 +0000
+Processing by EventMastersController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mEventMaster Load (1.1ms)[0m  [1mSELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1[0m  [["id", 27]]
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered event_masters/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 730ms (Views: 716.7ms | ActiveRecord: 2.2ms)
+
+
+Started PATCH "/event_masters/27" for 192.168.187.1 at 2015-05-10 18:15:10 +0000
+Processing by EventMastersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XpZEYAHoi43zrvm2iO8Uso6HxwRb5GhXZ5BDS/nFb+Y=", "event_master"=>{"title"=>";lkjk", "url"=>"lkjl", "description"=>"<p>ljkasfdsafdasdf<a href=\"http://www.google.com\">http://www.google.com</a></p>\r\n", "capacity"=>"5", "private"=>"1", "event_category_mappings_attributes"=>{"0"=>{"categories_id"=>"1", "sub_categories_ids"=>[""], "id"=>"9"}, "1"=>{"categories_id"=>"1", "sub_categories_ids"=>[""], "id"=>"11"}}, "status"=>"5", "start_date(1i)"=>"2010", "start_date(2i)"=>"1", "start_date(3i)"=>"1", "end_date(1i)"=>"2010", "end_date(2i)"=>"1", "end_date(3i)"=>"1", "max"=>"100"}, "button"=>"", "id"=>"27"}
+  [1m[36mEventMaster Load (0.7ms)[0m  [1mSELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1[0m  [["id", 27]]
+  [1m[35mUser Load (1.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Unpermitted parameters: sub_categories_ids, id
+Unpermitted parameters: sub_categories_ids, id
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  UPDATE "event_masters" SET "description" = $1, "updated_at" = $2 WHERE "event_masters"."id" = 27  [["description", "<p>ljkasfdsafdasdf<a href=\"http://www.google.com\">http://www.google.com</a></p>\r\n"], ["updated_at", "2015-05-10 18:15:10.346315"]]
+  [1m[36mSQL (89.9ms)[0m  [1mINSERT INTO "event_category_mappings" ("categories_id", "created_at", "event_master_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["categories_id", 1], ["created_at", "2015-05-10 18:15:10.354290"], ["event_master_id", 27], ["updated_at", "2015-05-10 18:15:10.354290"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "event_category_mappings" ("categories_id", "created_at", "event_master_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["categories_id", 1], ["created_at", "2015-05-10 18:15:10.450519"], ["event_master_id", 27], ["updated_at", "2015-05-10 18:15:10.450519"]]
+  [1m[36m (15.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://eventfunda.com:3000/event_masters/27
+Completed 302 Found in 165ms (ActiveRecord: 109.6ms)
+
+
+Started GET "/event_masters/27" for 192.168.187.1 at 2015-05-10 18:15:10 +0000
+Processing by EventMastersController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[35mEventMaster Load (1.8ms)[0m  SELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1  [["id", 27]]
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered event_masters/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 859ms (Views: 845.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/event_masters/" for 192.168.187.1 at 2015-05-10 18:16:42 +0000
+Processing by EventMastersController#index as HTML
+  [1m[35mEventMaster Load (1.0ms)[0m  SELECT "event_masters".* FROM "event_masters"
+  Rendered event_masters/index.html.erb within layouts/application (116.0ms)
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 936ms (Views: 931.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/images/thumb/missing.png" for 192.168.187.1 at 2015-05-10 18:16:43 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/missing.png"):
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (18.3ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.8ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (199.1ms)
+
+
+Started GET "/event_masters/28/event_ticket_types" for 192.168.187.1 at 2015-05-10 18:16:50 +0000
+Processing by EventTicketTypesController#index as HTML
+  Parameters: {"event_master_id"=>"28"}
+  [1m[35mEventMaster Load (0.7ms)[0m  SELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1  [["id", 28]]
+  [1m[36mEventTicketType Load (4.2ms)[0m  [1mSELECT "event_ticket_types".* FROM "event_ticket_types"  WHERE "event_ticket_types"."event_master_id" = $1[0m  [["event_master_id", 28]]
+  Rendered event_ticket_types/index.html.erb within layouts/application (63.5ms)
+  [1m[35mUser Load (1.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 983ms (Views: 900.6ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/event_masters/28/event_ticket_types/new" for 192.168.187.1 at 2015-05-10 18:16:54 +0000
+Processing by EventTicketTypesController#new as HTML
+  Parameters: {"event_master_id"=>"28"}
+  [1m[36mEventMaster Load (0.6ms)[0m  [1mSELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1[0m  [["id", 28]]
+  Rendered event_ticket_types/_form.html.erb (59.8ms)
+  Rendered event_ticket_types/new.html.erb within layouts/application (65.8ms)
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 769ms (Views: 758.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/event_masters/28/event_ticket_types/new" for 192.168.187.1 at 2015-05-10 18:16:59 +0000
+Processing by EventTicketTypesController#new as HTML
+  Parameters: {"event_master_id"=>"28"}
+  [1m[36mEventMaster Load (0.9ms)[0m  [1mSELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1[0m  [["id", 28]]
+  Rendered event_ticket_types/_form.html.erb (55.7ms)
+  Rendered event_ticket_types/new.html.erb within layouts/application (61.5ms)
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 900ms (Views: 889.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/_bootstrap-custom.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:00 +0000
+
+
+Started GET "/assets/application.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:00 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:00 +0000
+
+
+Started GET "/assets/event_category_mappings.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:00 +0000
+
+
+Started GET "/assets/event_masters.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:00 +0000
+
+
+Started GET "/assets/sub_categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:00 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:00 +0000
+
+
+Started GET "/assets/list_event_master.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:00 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:00 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:00 +0000
+
+
+Started GET "/assets/ckeditor/basepath.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:00 +0000
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:00 +0000
+
+
+Started GET "/assets/ckeditor/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:00 +0000
+
+
+Started GET "/assets/ckeditor-jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:00 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:00 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:01 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:01 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:01 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:01 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:01 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:01 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:01 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:01 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:01 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:01 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:02 +0000
+
+
+Started GET "/assets/event_category_mappings.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:02 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:02 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:02 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:02 +0000
+
+
+Started GET "/assets/event_masters.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:02 +0000
+
+
+Started GET "/assets/list_event_master.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:02 +0000
+
+
+Started GET "/assets/sub_categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:02 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:02 +0000
+
+
+Started GET "/assets/ckeditor/config.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:17:03 +0000
+
+
+Started GET "/assets/ckeditor/lang/en.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:17:03 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/editor.css?t=F0RD" for 192.168.187.1 at 2015-05-10 18:17:03 +0000
+
+
+Started GET "/assets/ckeditor/styles.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:17:03 +0000
+
+
+Started GET "/assets/ckeditor/contents.css?t=F0RD" for 192.168.187.1 at 2015-05-10 18:17:03 +0000
+
+
+Started GET "/event_masters/28/event_ticket_types" for 192.168.187.1 at 2015-05-10 18:17:05 +0000
+Processing by EventTicketTypesController#index as HTML
+  Parameters: {"event_master_id"=>"28"}
+  [1m[36mEventMaster Load (0.8ms)[0m  [1mSELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1[0m  [["id", 28]]
+  [1m[35mEventTicketType Load (0.9ms)[0m  SELECT "event_ticket_types".* FROM "event_ticket_types"  WHERE "event_ticket_types"."event_master_id" = $1  [["event_master_id", 28]]
+  Rendered event_ticket_types/index.html.erb within layouts/application (10.1ms)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 673ms (Views: 661.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/event_masters/28/event_ticket_types/new" for 192.168.187.1 at 2015-05-10 18:17:08 +0000
+Processing by EventTicketTypesController#new as HTML
+  Parameters: {"event_master_id"=>"28"}
+  [1m[35mEventMaster Load (0.6ms)[0m  SELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1  [["id", 28]]
+  Rendered event_ticket_types/_form.html.erb (44.1ms)
+  Rendered event_ticket_types/new.html.erb within layouts/application (47.8ms)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 826ms (Views: 816.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/event_masters/28/event_ticket_types/new" for 192.168.187.1 at 2015-05-10 18:17:14 +0000
+Processing by EventTicketTypesController#new as HTML
+  Parameters: {"event_master_id"=>"28"}
+  [1m[35mEventMaster Load (0.6ms)[0m  SELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1  [["id", 28]]
+  Rendered event_ticket_types/_form.html.erb (97.6ms)
+  Rendered event_ticket_types/new.html.erb within layouts/application (101.3ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 809ms (Views: 797.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/_bootstrap-custom.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:15 +0000
+
+
+Started GET "/assets/application.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:15 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:15 +0000
+
+
+Started GET "/assets/event_category_mappings.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:15 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:15 +0000
+
+
+Started GET "/assets/event_masters.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:15 +0000
+
+
+Started GET "/assets/list_event_master.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:15 +0000
+
+
+Started GET "/assets/sub_categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:15 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:15 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:15 +0000
+
+
+Started GET "/assets/ckeditor/basepath.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:15 +0000
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:15 +0000
+
+
+Started GET "/assets/ckeditor/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:15 +0000
+
+
+Started GET "/assets/ckeditor-jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:16 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:16 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:16 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:16 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:16 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:16 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:16 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:16 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:16 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:16 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:17 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:17 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:17 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:17 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:17 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:17 +0000
+
+
+Started GET "/assets/list_event_master.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:17 +0000
+
+
+Started GET "/assets/event_category_mappings.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:17 +0000
+
+
+Started GET "/assets/event_masters.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:17 +0000
+
+
+Started GET "/assets/sub_categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:17 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:17 +0000
+
+
+Started GET "/assets/ckeditor/config.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:17:18 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/editor.css?t=F0RD" for 192.168.187.1 at 2015-05-10 18:17:18 +0000
+
+
+Started GET "/assets/ckeditor/lang/en.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:17:18 +0000
+
+
+Started GET "/assets/ckeditor/styles.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:17:18 +0000
+
+
+Started GET "/assets/ckeditor/contents.css?t=F0RD" for 192.168.187.1 at 2015-05-10 18:17:18 +0000
+
+
+Started GET "/event_masters/28/event_ticket_types" for 192.168.187.1 at 2015-05-10 18:17:19 +0000
+Processing by EventTicketTypesController#index as HTML
+  Parameters: {"event_master_id"=>"28"}
+  [1m[35mEventMaster Load (0.7ms)[0m  SELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1  [["id", 28]]
+  [1m[36mEventTicketType Load (0.7ms)[0m  [1mSELECT "event_ticket_types".* FROM "event_ticket_types"  WHERE "event_ticket_types"."event_master_id" = $1[0m  [["event_master_id", 28]]
+  Rendered event_ticket_types/index.html.erb within layouts/application (8.2ms)
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 858ms (Views: 847.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/event_masters/28/event_ticket_types/6/edit" for 192.168.187.1 at 2015-05-10 18:17:22 +0000
+Processing by EventTicketTypesController#edit as HTML
+  Parameters: {"event_master_id"=>"28", "id"=>"6"}
+  [1m[36mEventTicketType Load (0.5ms)[0m  [1mSELECT  "event_ticket_types".* FROM "event_ticket_types"  WHERE "event_ticket_types"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35mEventMaster Load (0.6ms)[0m  SELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1  [["id", 28]]
+  Rendered event_ticket_types/_form.html.erb (55.0ms)
+  Rendered event_ticket_types/edit.html.erb within layouts/application (61.4ms)
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 931ms (Views: 917.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/event_masters/28/event_ticket_types/6/edit" for 192.168.187.1 at 2015-05-10 18:17:26 +0000
+Processing by EventTicketTypesController#edit as HTML
+  Parameters: {"event_master_id"=>"28", "id"=>"6"}
+  [1m[35mEventTicketType Load (0.8ms)[0m  SELECT  "event_ticket_types".* FROM "event_ticket_types"  WHERE "event_ticket_types"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mEventMaster Load (0.7ms)[0m  [1mSELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1[0m  [["id", 28]]
+  Rendered event_ticket_types/_form.html.erb (49.5ms)
+  Rendered event_ticket_types/edit.html.erb within layouts/application (55.7ms)
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 750ms (Views: 736.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/_bootstrap-custom.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:27 +0000
+
+
+Started GET "/assets/event_masters.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:27 +0000
+
+
+Started GET "/assets/list_event_master.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:27 +0000
+
+
+Started GET "/assets/event_category_mappings.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:27 +0000
+
+
+Started GET "/assets/application.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:27 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:27 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:27 +0000
+
+
+Started GET "/assets/sub_categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:17:27 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:27 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:27 +0000
+
+
+Started GET "/assets/ckeditor/basepath.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:27 +0000
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:27 +0000
+
+
+Started GET "/assets/ckeditor/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:28 +0000
+
+
+Started GET "/assets/ckeditor-jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:28 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:28 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:28 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:28 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:28 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:28 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:28 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:28 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:28 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:29 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:29 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:29 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:29 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:29 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:29 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:29 +0000
+
+
+Started GET "/assets/event_category_mappings.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:29 +0000
+
+
+Started GET "/assets/event_masters.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:29 +0000
+
+
+Started GET "/assets/list_event_master.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:29 +0000
+
+
+Started GET "/assets/sub_categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:29 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:17:29 +0000
+
+
+Started GET "/assets/ckeditor/config.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:17:30 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/editor.css?t=F0RD" for 192.168.187.1 at 2015-05-10 18:17:30 +0000
+
+
+Started GET "/assets/ckeditor/lang/en.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:17:30 +0000
+
+
+Started GET "/assets/ckeditor/styles.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:17:30 +0000
+
+
+Started GET "/assets/ckeditor/contents.css?t=F0RD" for 192.168.187.1 at 2015-05-10 18:17:30 +0000
+
+
+Started GET "/event_masters/28/" for 192.168.187.1 at 2015-05-10 18:18:10 +0000
+Processing by EventMastersController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mEventMaster Load (0.7ms)[0m  [1mSELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1[0m  [["id", 28]]
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered event_masters/show.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 857ms (Views: 835.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/event_masters/28/edit" for 192.168.187.1 at 2015-05-10 18:18:17 +0000
+Processing by EventMastersController#edit as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mEventMaster Load (0.8ms)[0m  [1mSELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1[0m  [["id", 28]]
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEventCategoryMapping Load (1.1ms)[0m  [1mSELECT "event_category_mappings".* FROM "event_category_mappings"  WHERE "event_category_mappings"."event_master_id" = $1[0m  [["event_master_id", 28]]
+  [1m[35mCategory Load (0.8ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mSubCategory Load (0.7ms)[0m  [1mSELECT "sub_categories".* FROM "sub_categories"[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "sub_categories".* FROM "sub_categories"[0m
+  Rendered event_masters/_form.html.erb (147.9ms)
+  Rendered event_masters/edit.html.erb within layouts/application (154.2ms)
+Completed 200 OK in 1006ms (Views: 993.0ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/event_masters/28/edit" for 192.168.187.1 at 2015-05-10 18:18:22 +0000
+Processing by EventMastersController#edit as HTML
+  Parameters: {"id"=>"28"}
+  [1m[35mEventMaster Load (0.6ms)[0m  SELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1  [["id", 28]]
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEventCategoryMapping Load (1.0ms)[0m  SELECT "event_category_mappings".* FROM "event_category_mappings"  WHERE "event_category_mappings"."event_master_id" = $1  [["event_master_id", 28]]
+  [1m[36mCategory Load (0.8ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mSubCategory Load (0.7ms)[0m  SELECT "sub_categories".* FROM "sub_categories"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sub_categories".* FROM "sub_categories"
+  Rendered event_masters/_form.html.erb (146.9ms)
+  Rendered event_masters/edit.html.erb within layouts/application (150.8ms)
+Completed 200 OK in 789ms (Views: 773.7ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.187.1 at 2015-05-10 18:18:23 +0000
+
+
+Started GET "/assets/_bootstrap-custom.css?body=1" for 192.168.187.1 at 2015-05-10 18:18:23 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:18:23 +0000
+
+
+Started GET "/assets/event_masters.css?body=1" for 192.168.187.1 at 2015-05-10 18:18:23 +0000
+
+
+Started GET "/assets/event_category_mappings.css?body=1" for 192.168.187.1 at 2015-05-10 18:18:23 +0000
+
+
+Started GET "/assets/list_event_master.css?body=1" for 192.168.187.1 at 2015-05-10 18:18:23 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.187.1 at 2015-05-10 18:18:23 +0000
+
+
+Started GET "/assets/sub_categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:18:23 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:24 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:24 +0000
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:24 +0000
+
+
+Started GET "/assets/ckeditor/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:24 +0000
+
+
+Started GET "/assets/ckeditor/basepath.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:24 +0000
+
+
+Started GET "/assets/ckeditor-jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:24 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:24 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:24 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:24 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:24 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:24 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:24 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:24 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:24 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:24 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:24 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:24 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:24 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:25 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:25 +0000
+
+
+Started GET "/assets/event_category_mappings.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:25 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:25 +0000
+
+
+Started GET "/assets/event_masters.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:25 +0000
+
+
+Started GET "/assets/list_event_master.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:25 +0000
+
+
+Started GET "/assets/sub_categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:25 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:25 +0000
+
+
+Started GET "/assets/ckeditor/config.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:18:26 +0000
+
+
+Started GET "/assets/ckeditor/lang/en.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:18:26 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/editor.css?t=F0RD" for 192.168.187.1 at 2015-05-10 18:18:26 +0000
+
+
+Started GET "/assets/ckeditor/styles.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:18:26 +0000
+
+
+Started GET "/assets/ckeditor/contents.css?t=F0RD" for 192.168.187.1 at 2015-05-10 18:18:26 +0000
+
+
+Started GET "/event_masters/28/edit" for 192.168.187.1 at 2015-05-10 18:18:39 +0000
+Processing by EventMastersController#edit as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mEventMaster Load (0.6ms)[0m  [1mSELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1[0m  [["id", 28]]
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEventCategoryMapping Load (0.5ms)[0m  [1mSELECT "event_category_mappings".* FROM "event_category_mappings"  WHERE "event_category_mappings"."event_master_id" = $1[0m  [["event_master_id", 28]]
+  [1m[35mCategory Load (0.7ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mSubCategory Load (0.7ms)[0m  [1mSELECT "sub_categories".* FROM "sub_categories"[0m
+  [1m[35mCACHE (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "sub_categories".* FROM "sub_categories"[0m
+  Rendered event_masters/_form.html.erb (165.3ms)
+  Rendered event_masters/edit.html.erb within layouts/application (168.9ms)
+Completed 200 OK in 810ms (Views: 795.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.187.1 at 2015-05-10 18:18:40 +0000
+
+
+Started GET "/assets/event_category_mappings.css?body=1" for 192.168.187.1 at 2015-05-10 18:18:40 +0000
+
+
+Started GET "/assets/event_masters.css?body=1" for 192.168.187.1 at 2015-05-10 18:18:40 +0000
+
+
+Started GET "/assets/_bootstrap-custom.css?body=1" for 192.168.187.1 at 2015-05-10 18:18:40 +0000
+
+
+Started GET "/assets/list_event_master.css?body=1" for 192.168.187.1 at 2015-05-10 18:18:40 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:18:40 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.187.1 at 2015-05-10 18:18:40 +0000
+
+
+Started GET "/assets/sub_categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:18:40 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:40 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:40 +0000
+
+
+Started GET "/assets/ckeditor/basepath.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:40 +0000
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:40 +0000
+
+
+Started GET "/assets/ckeditor/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/ckeditor-jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/event_category_mappings.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/event_masters.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/list_event_master.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/sub_categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/ckeditor/config.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/ckeditor/lang/en.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/editor.css?t=F0RD" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/ckeditor/styles.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/assets/ckeditor/contents.css?t=F0RD" for 192.168.187.1 at 2015-05-10 18:18:41 +0000
+
+
+Started GET "/event_masters/28/" for 192.168.187.1 at 2015-05-10 18:18:43 +0000
+Processing by EventMastersController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[35mEventMaster Load (0.9ms)[0m  SELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1  [["id", 28]]
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered event_masters/show.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 907ms (Views: 893.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/event_masters/28/edit" for 192.168.187.1 at 2015-05-10 18:18:50 +0000
+Processing by EventMastersController#edit as HTML
+  Parameters: {"id"=>"28"}
+  [1m[35mEventMaster Load (0.6ms)[0m  SELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1  [["id", 28]]
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEventCategoryMapping Load (0.7ms)[0m  SELECT "event_category_mappings".* FROM "event_category_mappings"  WHERE "event_category_mappings"."event_master_id" = $1  [["event_master_id", 28]]
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mSubCategory Load (0.7ms)[0m  SELECT "sub_categories".* FROM "sub_categories"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sub_categories".* FROM "sub_categories"
+  Rendered event_masters/_form.html.erb (157.4ms)
+  Rendered event_masters/edit.html.erb within layouts/application (161.5ms)
+Completed 200 OK in 987ms (Views: 974.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/event_masters/28/edit" for 192.168.187.1 at 2015-05-10 18:23:30 +0000
+Processing by EventMastersController#edit as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mEventMaster Load (1.5ms)[0m  [1mSELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1[0m  [["id", 28]]
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEventCategoryMapping Load (0.7ms)[0m  [1mSELECT "event_category_mappings".* FROM "event_category_mappings"  WHERE "event_category_mappings"."event_master_id" = $1[0m  [["event_master_id", 28]]
+  [1m[35mCategory Load (0.7ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mSubCategory Load (1.0ms)[0m  [1mSELECT "sub_categories".* FROM "sub_categories"[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "sub_categories".* FROM "sub_categories"[0m
+  Rendered event_masters/_form.html.erb (183.7ms)
+  Rendered event_masters/edit.html.erb within layouts/application (187.2ms)
+Completed 200 OK in 926ms (Views: 900.1ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.187.1 at 2015-05-10 18:23:31 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:23:31 +0000
+
+
+Started GET "/assets/list_event_master.css?body=1" for 192.168.187.1 at 2015-05-10 18:23:31 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.187.1 at 2015-05-10 18:23:31 +0000
+
+
+Started GET "/assets/_bootstrap-custom.css?body=1" for 192.168.187.1 at 2015-05-10 18:23:31 +0000
+
+
+Started GET "/assets/event_category_mappings.css?body=1" for 192.168.187.1 at 2015-05-10 18:23:31 +0000
+
+
+Started GET "/assets/event_masters.css?body=1" for 192.168.187.1 at 2015-05-10 18:23:31 +0000
+
+
+Started GET "/assets/sub_categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:23:31 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:31 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:31 +0000
+
+
+Started GET "/assets/ckeditor/basepath.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:31 +0000
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:31 +0000
+
+
+Started GET "/assets/ckeditor/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:31 +0000
+
+
+Started GET "/assets/ckeditor-jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:31 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:31 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:31 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/event_category_mappings.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/event_masters.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/list_event_master.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/sub_categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/ckeditor/config.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/ckeditor/lang/en.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/editor.css?t=F0RD" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/ckeditor/styles.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/assets/ckeditor/contents.css?t=F0RD" for 192.168.187.1 at 2015-05-10 18:23:32 +0000
+
+
+Started GET "/event_masters/28/edit" for 192.168.187.1 at 2015-05-10 18:23:58 +0000
+Processing by EventMastersController#edit as HTML
+  Parameters: {"id"=>"28"}
+  [1m[35mEventMaster Load (0.7ms)[0m  SELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1  [["id", 28]]
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEventCategoryMapping Load (0.7ms)[0m  SELECT "event_category_mappings".* FROM "event_category_mappings"  WHERE "event_category_mappings"."event_master_id" = $1  [["event_master_id", 28]]
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mSubCategory Load (1.2ms)[0m  SELECT "sub_categories".* FROM "sub_categories"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "sub_categories".* FROM "sub_categories"
+  Rendered event_masters/_form.html.erb (157.4ms)
+  Rendered event_masters/edit.html.erb within layouts/application (161.1ms)
+Completed 200 OK in 915ms (Views: 900.2ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/assets/_bootstrap-custom.css?body=1" for 192.168.187.1 at 2015-05-10 18:23:59 +0000
+
+
+Started GET "/assets/application.css?body=1" for 192.168.187.1 at 2015-05-10 18:23:59 +0000
+
+
+Started GET "/assets/event_category_mappings.css?body=1" for 192.168.187.1 at 2015-05-10 18:23:59 +0000
+
+
+Started GET "/assets/list_event_master.css?body=1" for 192.168.187.1 at 2015-05-10 18:23:59 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:23:59 +0000
+
+
+Started GET "/assets/event_masters.css?body=1" for 192.168.187.1 at 2015-05-10 18:23:59 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.187.1 at 2015-05-10 18:23:59 +0000
+
+
+Started GET "/assets/sub_categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:23:59 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:59 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:59 +0000
+
+
+Started GET "/assets/ckeditor/basepath.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:59 +0000
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:59 +0000
+
+
+Started GET "/assets/ckeditor/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:59 +0000
+
+
+Started GET "/assets/ckeditor-jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:59 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:59 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:59 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 192.168.187.1 at 2015-05-10 18:23:59 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:00 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:00 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:00 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:00 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:00 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:00 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:00 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:00 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:00 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:00 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:00 +0000
+
+
+Started GET "/assets/event_category_mappings.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:00 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:00 +0000
+
+
+Started GET "/assets/event_masters.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:00 +0000
+
+
+Started GET "/assets/list_event_master.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:00 +0000
+
+
+Started GET "/assets/sub_categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:00 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:00 +0000
+
+
+Started GET "/assets/ckeditor/config.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:24:01 +0000
+
+
+Started GET "/assets/ckeditor/lang/en.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:24:01 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/editor.css?t=F0RD" for 192.168.187.1 at 2015-05-10 18:24:01 +0000
+
+
+Started GET "/assets/ckeditor/styles.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:24:01 +0000
+
+
+Started GET "/assets/ckeditor/contents.css?t=F0RD" for 192.168.187.1 at 2015-05-10 18:24:02 +0000
+
+
+Started GET "/event_masters/28/edit" for 192.168.187.1 at 2015-05-10 18:24:03 +0000
+Processing by EventMastersController#edit as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mEventMaster Load (0.6ms)[0m  [1mSELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1[0m  [["id", 28]]
+  [1m[35mUser Load (1.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEventCategoryMapping Load (0.5ms)[0m  [1mSELECT "event_category_mappings".* FROM "event_category_mappings"  WHERE "event_category_mappings"."event_master_id" = $1[0m  [["event_master_id", 28]]
+  [1m[35mCategory Load (0.7ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mSubCategory Load (0.7ms)[0m  [1mSELECT "sub_categories".* FROM "sub_categories"[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "sub_categories".* FROM "sub_categories"[0m
+  Rendered event_masters/_form.html.erb (149.5ms)
+  Rendered event_masters/edit.html.erb within layouts/application (153.2ms)
+Completed 200 OK in 1015ms (Views: 1001.0ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.187.1 at 2015-05-10 18:24:05 +0000
+
+
+Started GET "/assets/_bootstrap-custom.css?body=1" for 192.168.187.1 at 2015-05-10 18:24:05 +0000
+
+
+Started GET "/assets/event_category_mappings.css?body=1" for 192.168.187.1 at 2015-05-10 18:24:05 +0000
+
+
+Started GET "/assets/event_masters.css?body=1" for 192.168.187.1 at 2015-05-10 18:24:05 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:24:05 +0000
+
+
+Started GET "/assets/list_event_master.css?body=1" for 192.168.187.1 at 2015-05-10 18:24:05 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.187.1 at 2015-05-10 18:24:05 +0000
+
+
+Started GET "/assets/sub_categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:24:05 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:05 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:05 +0000
+
+
+Started GET "/assets/ckeditor/basepath.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:05 +0000
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:05 +0000
+
+
+Started GET "/assets/ckeditor/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:05 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:05 +0000
+
+
+Started GET "/assets/ckeditor-jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:05 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:05 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:05 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:06 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:06 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:06 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:06 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:06 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:06 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:06 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:06 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:06 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:06 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:06 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:06 +0000
+
+
+Started GET "/assets/event_category_mappings.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:06 +0000
+
+
+Started GET "/assets/event_masters.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:06 +0000
+
+
+Started GET "/assets/list_event_master.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:06 +0000
+
+
+Started GET "/assets/sub_categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:06 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:06 +0000
+
+
+Started GET "/assets/ckeditor/config.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:24:07 +0000
+
+
+Started GET "/assets/ckeditor/lang/en.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:24:07 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/editor.css?t=F0RD" for 192.168.187.1 at 2015-05-10 18:24:07 +0000
+
+
+Started GET "/assets/ckeditor/styles.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:24:07 +0000
+
+
+Started GET "/assets/ckeditor/contents.css?t=F0RD" for 192.168.187.1 at 2015-05-10 18:24:07 +0000
+
+
+Started GET "/event_masters/28/" for 192.168.187.1 at 2015-05-10 18:24:08 +0000
+Processing by EventMastersController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[35mEventMaster Load (0.5ms)[0m  SELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1  [["id", 28]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered event_masters/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 477ms (Views: 468.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/event_masters/28/edit" for 192.168.187.1 at 2015-05-10 18:24:12 +0000
+Processing by EventMastersController#edit as HTML
+  Parameters: {"id"=>"28"}
+  [1m[35mEventMaster Load (0.7ms)[0m  SELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1  [["id", 28]]
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEventCategoryMapping Load (0.5ms)[0m  SELECT "event_category_mappings".* FROM "event_category_mappings"  WHERE "event_category_mappings"."event_master_id" = $1  [["event_master_id", 28]]
+  [1m[36mCategory Load (0.9ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mSubCategory Load (0.8ms)[0m  SELECT "sub_categories".* FROM "sub_categories"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sub_categories".* FROM "sub_categories"
+  Rendered event_masters/_form.html.erb (150.1ms)
+  Rendered event_masters/edit.html.erb within layouts/application (154.5ms)
+Completed 200 OK in 1030ms (Views: 1016.1ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/event_masters/28/edit" for 192.168.187.1 at 2015-05-10 18:24:15 +0000
+Processing by EventMastersController#edit as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mEventMaster Load (0.6ms)[0m  [1mSELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1[0m  [["id", 28]]
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEventCategoryMapping Load (0.6ms)[0m  [1mSELECT "event_category_mappings".* FROM "event_category_mappings"  WHERE "event_category_mappings"."event_master_id" = $1[0m  [["event_master_id", 28]]
+  [1m[35mCategory Load (0.9ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mSubCategory Load (0.9ms)[0m  [1mSELECT "sub_categories".* FROM "sub_categories"[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT "sub_categories".* FROM "sub_categories"[0m
+  Rendered event_masters/_form.html.erb (148.1ms)
+  Rendered event_masters/edit.html.erb within layouts/application (152.5ms)
+Completed 200 OK in 1025ms (Views: 1011.2ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/assets/_bootstrap-custom.css?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/application.css?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/event_category_mappings.css?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/event_masters.css?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/list_event_master.css?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/sub_categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/ckeditor/basepath.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/ckeditor/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/ckeditor-jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/event_category_mappings.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/event_masters.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/list_event_master.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/sub_categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/ckeditor/config.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/ckeditor/lang/en.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/editor.css?t=F0RD" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/ckeditor/styles.js?t=F0RD" for 192.168.187.1 at 2015-05-10 18:24:17 +0000
+
+
+Started GET "/assets/ckeditor/contents.css?t=F0RD" for 192.168.187.1 at 2015-05-10 18:24:18 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCkeditorAssets (20150510182924)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (353.0ms)[0m  [1mCREATE TABLE "ckeditor_assets" ("id" serial primary key, "data_file_name" character varying(255) NOT NULL, "data_content_type" character varying(255), "data_file_size" integer, "assetable_id" integer, "assetable_type" character varying(30), "type" character varying(30), "width" integer, "height" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (8.0ms)[0m  CREATE  INDEX  "idx_ckeditor_assetable_type" ON "ckeditor_assets"  ("assetable_type", "type", "assetable_id")
+  [1m[36m (4.8ms)[0m  [1mCREATE  INDEX  "idx_ckeditor_assetable" ON "ckeditor_assets"  ("assetable_type", "assetable_id")[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150510182924"]]
+  [1m[36m (7.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/event_masters/28/edit" for 192.168.187.1 at 2015-05-10 18:34:25 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventMastersController#edit as HTML
+  Parameters: {"id"=>"28"}
+  [1m[35mEventMaster Load (1.5ms)[0m  SELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1  [["id", 28]]
+  [1m[36mUser Load (2.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEventCategoryMapping Load (1.3ms)[0m  SELECT "event_category_mappings".* FROM "event_category_mappings"  WHERE "event_category_mappings"."event_master_id" = $1  [["event_master_id", 28]]
+  [1m[36mCategory Load (1.7ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mSubCategory Load (1.5ms)[0m  SELECT "sub_categories".* FROM "sub_categories"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "sub_categories".* FROM "sub_categories"
+  Rendered event_masters/_form.html.erb (526.4ms)
+  Rendered event_masters/edit.html.erb within layouts/application (540.0ms)
+Completed 200 OK in 2423ms (Views: 2186.4ms | ActiveRecord: 35.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:27 +0000
+
+
+Started GET "/assets/_bootstrap-custom.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/list_event_master.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/event_masters.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/event_category_mappings.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/sub_categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/ckeditor/init.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:28 +0000
+
+
+Started GET "/assets/event_category_mappings.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:29 +0000
+
+
+Started GET "/assets/event_masters.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:29 +0000
+
+
+Started GET "/assets/list_event_master.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:29 +0000
+
+
+Started GET "/assets/sub_categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:29 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:29 +0000
+
+
+Started GET "/event_masters/28/edit" for 192.168.187.1 at 2015-05-10 18:34:32 +0000
+Processing by EventMastersController#edit as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mEventMaster Load (1.0ms)[0m  [1mSELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1[0m  [["id", 28]]
+  [1m[35mUser Load (1.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mEventCategoryMapping Load (0.8ms)[0m  [1mSELECT "event_category_mappings".* FROM "event_category_mappings"  WHERE "event_category_mappings"."event_master_id" = $1[0m  [["event_master_id", 28]]
+  [1m[35mCategory Load (0.8ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mSubCategory Load (1.0ms)[0m  [1mSELECT "sub_categories".* FROM "sub_categories"[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "sub_categories".* FROM "sub_categories"[0m
+  Rendered event_masters/_form.html.erb (171.2ms)
+  Rendered event_masters/edit.html.erb within layouts/application (175.5ms)
+Completed 200 OK in 1027ms (Views: 1006.4ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:33 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:33 +0000
+
+
+Started GET "/assets/_bootstrap-custom.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:33 +0000
+
+
+Started GET "/assets/event_category_mappings.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:33 +0000
+
+
+Started GET "/assets/list_event_master.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:33 +0000
+
+
+Started GET "/assets/event_masters.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:33 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:33 +0000
+
+
+Started GET "/assets/sub_categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:33 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:33 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:33 +0000
+
+
+Started GET "/assets/ckeditor/init.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:33 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:33 +0000
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:33 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:34 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:34 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:34 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:34 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:34 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:34 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:34 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:34 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:34 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:34 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:34 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:34 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:34 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:34 +0000
+
+
+Started GET "/assets/event_category_mappings.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:34 +0000
+
+
+Started GET "/assets/event_masters.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:34 +0000
+
+
+Started GET "/assets/list_event_master.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:34 +0000
+
+
+Started GET "/assets/sub_categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:35 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:35 +0000
+
+
+Started GET "/event_masters/28/edit" for 192.168.187.1 at 2015-05-10 18:34:46 +0000
+Processing by EventMastersController#edit as HTML
+  Parameters: {"id"=>"28"}
+  [1m[35mEventMaster Load (1.0ms)[0m  SELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1  [["id", 28]]
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEventCategoryMapping Load (0.9ms)[0m  SELECT "event_category_mappings".* FROM "event_category_mappings"  WHERE "event_category_mappings"."event_master_id" = $1  [["event_master_id", 28]]
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mSubCategory Load (0.7ms)[0m  SELECT "sub_categories".* FROM "sub_categories"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "sub_categories".* FROM "sub_categories"
+  Rendered event_masters/_form.html.erb (195.8ms)
+  Rendered event_masters/edit.html.erb within layouts/application (200.1ms)
+Completed 200 OK in 1057ms (Views: 1038.3ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:48 +0000
+
+
+Started GET "/assets/_bootstrap-custom.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:48 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:48 +0000
+
+
+Started GET "/assets/event_category_mappings.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:48 +0000
+
+
+Started GET "/assets/event_masters.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:48 +0000
+
+
+Started GET "/assets/list_event_master.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:48 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:48 +0000
+
+
+Started GET "/assets/sub_categories.css?body=1" for 192.168.187.1 at 2015-05-10 18:34:48 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:48 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:48 +0000
+
+
+Started GET "/assets/ckeditor/init.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:48 +0000
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:48 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:48 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:48 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:48 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:49 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:49 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:49 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:49 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:49 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:49 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:49 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:49 +0000
+
+
+Started GET "/assets/event_category_mappings.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:49 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:49 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:49 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:49 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:49 +0000
+
+
+Started GET "/assets/event_masters.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:49 +0000
+
+
+Started GET "/assets/list_event_master.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:49 +0000
+
+
+Started GET "/assets/sub_categories.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:49 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:34:49 +0000
+
+
+Started GET "/assets/ckeditor/config.js?t=EAPE" for 192.168.187.1 at 2015-05-10 18:34:50 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/editor.css?t=EAPE" for 192.168.187.1 at 2015-05-10 18:34:50 +0000
+
+
+Started GET "/assets/ckeditor/lang/en.js?t=EAPE" for 192.168.187.1 at 2015-05-10 18:34:51 +0000
+
+
+Started GET "/assets/ckeditor/styles.js?t=EAPE" for 192.168.187.1 at 2015-05-10 18:34:51 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/icons.png" for 192.168.187.1 at 2015-05-10 18:34:51 +0000
+
+
+Started GET "/assets/ckeditor/contents.css?t=EAPE" for 192.168.187.1 at 2015-05-10 18:34:51 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/dialog.css?t=EAPE" for 192.168.187.1 at 2015-05-10 18:35:00 +0000
+
+
+Started GET "/assets/ckeditor/plugins/image/dialogs/image.js?t=EAPE" for 192.168.187.1 at 2015-05-10 18:35:00 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/images/close.png" for 192.168.187.1 at 2015-05-10 18:35:00 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/images/lock.png" for 192.168.187.1 at 2015-05-10 18:35:00 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/images/refresh.png" for 192.168.187.1 at 2015-05-10 18:35:00 +0000
+
+
+Started GET "/ckeditor/pictures?CKEditor=event_master_description&CKEditorFuncNum=1&langCode=en" for 192.168.187.1 at 2015-05-10 18:35:03 +0000
+Processing by Ckeditor::PicturesController#index as HTML
+  Parameters: {"CKEditor"=>"event_master_description", "CKEditorFuncNum"=>"1", "langCode"=>"en"}
+  [1m[36mCkeditor::Picture Load (2.5ms)[0m  [1mSELECT  "ckeditor_assets".* FROM "ckeditor_assets"  WHERE "ckeditor_assets"."type" IN ('Ckeditor::Picture')  ORDER BY id desc LIMIT 24 OFFSET 0[0m
+  Rendered /var/lib/gems/2.1.0/gems/ckeditor-4.1.1/app/views/ckeditor/shared/_asset.html.erb (0.0ms)
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "ckeditor_assets"  WHERE "ckeditor_assets"."type" IN ('Ckeditor::Picture')
+  Rendered /var/lib/gems/2.1.0/gems/ckeditor-4.1.1/app/views/ckeditor/pictures/index.html.erb within layouts/ckeditor/application (21.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/ckeditor-4.1.1/app/views/ckeditor/shared/_asset_tmpl.html.erb (8.7ms)
+Completed 200 OK in 618ms (Views: 578.7ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/assets/ckeditor/application.css?body=1" for 192.168.187.1 at 2015-05-10 18:35:04 +0000
+
+
+Started GET "/assets/ckeditor/filebrowser/stylesheets/uploader.css?body=1" for 192.168.187.1 at 2015-05-10 18:35:04 +0000
+
+
+Started GET "/assets/ckeditor/filebrowser/javascripts/jquery.tmpl.min.js?body=1" for 192.168.187.1 at 2015-05-10 18:35:04 +0000
+
+
+Started GET "/assets/ckeditor/filebrowser/javascripts/fileuploader.js?body=1" for 192.168.187.1 at 2015-05-10 18:35:04 +0000
+
+
+Started GET "/assets/ckeditor/filebrowser/javascripts/jquery.endless-scroll.js?body=1" for 192.168.187.1 at 2015-05-10 18:35:04 +0000
+
+
+Started GET "/assets/ckeditor/filebrowser/javascripts/jquery.min.js?body=1" for 192.168.187.1 at 2015-05-10 18:35:04 +0000
+
+
+Started GET "/assets/ckeditor/filebrowser/javascripts/rails.js?body=1" for 192.168.187.1 at 2015-05-10 18:35:04 +0000
+
+
+Started GET "/assets/ckeditor/filebrowser/javascripts/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:35:04 +0000
+
+
+Started GET "/assets/ckeditor/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:35:04 +0000
+
+
+Started GET "/assets/ckeditor/filebrowser/images/gal_add.png" for 192.168.187.1 at 2015-05-10 18:35:05 +0000
+
+
+Started GET "/assets/ckeditor/filebrowser/images/preloader.gif" for 192.168.187.1 at 2015-05-10 18:35:16 +0000
+
+
+Started POST "/ckeditor/pictures?qqfile=Hydrangeas.jpg" for 192.168.187.1 at 2015-05-10 18:35:16 +0000
+Processing by Ckeditor::PicturesController#create as */*
+  Parameters: {"qqfile"=>"Hydrangeas.jpg"}
+Command :: PATH=C:\Program Files\ImageMagick-6.9.0-Q8:$PATH; file -b --mime '/tmp/bf985db725ae8b45c015baab1dea441297b6785d20150510-1492-1r972th'
+Command :: PATH=C:\Program Files\ImageMagick-6.9.0-Q8:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/5415c7fe534a63366b48d388f204c32820150510-1492-bsf4od.jpg[0]' 2>/dev/null
+Command :: PATH=C:\Program Files\ImageMagick-6.9.0-Q8:$PATH; identify -format %m '/tmp/5415c7fe534a63366b48d388f204c32820150510-1492-bsf4od.jpg[0]'
+Command :: PATH=C:\Program Files\ImageMagick-6.9.0-Q8:$PATH; convert '/tmp/5415c7fe534a63366b48d388f204c32820150510-1492-bsf4od.jpg[0]' -auto-orient -resize "800>" '/tmp/5415c7fe534a63366b48d388f204c32820150510-1492-bsf4od20150510-1492-vtjsus'
+Command :: PATH=C:\Program Files\ImageMagick-6.9.0-Q8:$PATH; file -b --mime '/tmp/5415c7fe534a63366b48d388f204c32820150510-1492-bsf4od20150510-1492-vtjsus'
+Command :: PATH=C:\Program Files\ImageMagick-6.9.0-Q8:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/5415c7fe534a63366b48d388f204c32820150510-1492-bsf4od.jpg[0]' 2>/dev/null
+Command :: PATH=C:\Program Files\ImageMagick-6.9.0-Q8:$PATH; identify -format %m '/tmp/5415c7fe534a63366b48d388f204c32820150510-1492-bsf4od.jpg[0]'
+Command :: PATH=C:\Program Files\ImageMagick-6.9.0-Q8:$PATH; convert '/tmp/5415c7fe534a63366b48d388f204c32820150510-1492-bsf4od.jpg[0]' -auto-orient -resize "x100" -crop "118x100+7+0" +repage '/tmp/5415c7fe534a63366b48d388f204c32820150510-1492-bsf4od20150510-1492-keuime'
+Command :: PATH=C:\Program Files\ImageMagick-6.9.0-Q8:$PATH; file -b --mime '/tmp/5415c7fe534a63366b48d388f204c32820150510-1492-bsf4od20150510-1492-keuime'
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+Command :: PATH=C:\Program Files\ImageMagick-6.9.0-Q8:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/5415c7fe534a63366b48d388f204c32820150510-1492-bsf4od.jpg[0]' 2>/dev/null
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "ckeditor_assets" ("assetable_id", "assetable_type", "created_at", "data_content_type", "data_file_name", "data_file_size", "height", "type", "updated_at", "width") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["assetable_id", 1], ["assetable_type", "User"], ["created_at", "2015-05-10 18:35:21.241130"], ["data_content_type", "image/jpeg"], ["data_file_name", "hydrangeas.jpg"], ["data_file_size", 595284], ["height", 768], ["type", "Ckeditor::Picture"], ["updated_at", "2015-05-10 18:35:21.241130"], ["width", 1024]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  Rendered text template (0.1ms)
+Completed 200 OK in 5124ms (Views: 11.2ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/assets/ckeditor/filebrowser/images/gal_del.png" for 192.168.187.1 at 2015-05-10 18:35:21 +0000
+
+
+Started GET "/ckeditor/pictures?CKEditor=event_master_description&CKEditorFuncNum=1&langCode=en" for 192.168.187.1 at 2015-05-10 18:35:31 +0000
+Processing by Ckeditor::PicturesController#index as HTML
+  Parameters: {"CKEditor"=>"event_master_description", "CKEditorFuncNum"=>"1", "langCode"=>"en"}
+  [1m[36mCkeditor::Picture Load (1.2ms)[0m  [1mSELECT  "ckeditor_assets".* FROM "ckeditor_assets"  WHERE "ckeditor_assets"."type" IN ('Ckeditor::Picture')  ORDER BY id desc LIMIT 24 OFFSET 0[0m
+  Rendered /var/lib/gems/2.1.0/gems/ckeditor-4.1.1/app/views/ckeditor/shared/_asset.html.erb (117.8ms)
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "ckeditor_assets"  WHERE "ckeditor_assets"."type" IN ('Ckeditor::Picture')
+  Rendered /var/lib/gems/2.1.0/gems/ckeditor-4.1.1/app/views/ckeditor/pictures/index.html.erb within layouts/ckeditor/application (135.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/ckeditor-4.1.1/app/views/ckeditor/shared/_asset_tmpl.html.erb (1.7ms)
+Completed 200 OK in 336ms (Views: 331.3ms | ActiveRecord: 1.9ms)
+
+
+Started PATCH "/event_masters/28" for 192.168.187.1 at 2015-05-10 18:35:47 +0000
+Processing by EventMastersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XpZEYAHoi43zrvm2iO8Uso6HxwRb5GhXZ5BDS/nFb+Y=", "event_master"=>{"title"=>"kjkj", "url"=>"kj", "description"=>"<p><img alt=\"\" src=\"/ckeditor_assets/pictures/1/content_hydrangeas.jpg\" style=\"width: 800px; height: 600px;\" />llk</p>\r\n", "capacity"=>"2", "private"=>"1", "event_category_mappings_attributes"=>{"0"=>{"categories_id"=>"1", "sub_categories_ids"=>[""], "id"=>"10"}, "1"=>{"categories_id"=>"1", "sub_categories_ids"=>[""], "id"=>"12"}}, "status"=>"5", "start_date(1i)"=>"2010", "start_date(2i)"=>"1", "start_date(3i)"=>"1", "end_date(1i)"=>"2010", "end_date(2i)"=>"1", "end_date(3i)"=>"1", "max"=>"5"}, "button"=>"", "id"=>"28"}
+  [1m[36mEventMaster Load (1.2ms)[0m  [1mSELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1[0m  [["id", 28]]
+  [1m[35mUser Load (1.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Unpermitted parameters: sub_categories_ids, id
+Unpermitted parameters: sub_categories_ids, id
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "event_masters" SET "description" = $1, "updated_at" = $2 WHERE "event_masters"."id" = 28  [["description", "<p><img alt=\"\" src=\"/ckeditor_assets/pictures/1/content_hydrangeas.jpg\" style=\"width: 800px; height: 600px;\" />llk</p>\r\n"], ["updated_at", "2015-05-10 18:35:47.850187"]]
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "event_category_mappings" ("categories_id", "created_at", "event_master_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["categories_id", 1], ["created_at", "2015-05-10 18:35:47.859281"], ["event_master_id", 28], ["updated_at", "2015-05-10 18:35:47.859281"]]
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "event_category_mappings" ("categories_id", "created_at", "event_master_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["categories_id", 1], ["created_at", "2015-05-10 18:35:47.867035"], ["event_master_id", 28], ["updated_at", "2015-05-10 18:35:47.867035"]]
+  [1m[36m (39.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://eventfunda.com:3000/event_masters/28
+Completed 302 Found in 130ms (ActiveRecord: 46.2ms)
+
+
+Started GET "/event_masters/28" for 192.168.187.1 at 2015-05-10 18:35:47 +0000
+Processing by EventMastersController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[35mEventMaster Load (0.8ms)[0m  SELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1  [["id", 28]]
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered event_masters/show.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 796ms (Views: 784.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 18:35:48 +0000
+
+
+Started GET "/assets/ckeditor/init.js?body=1" for 192.168.187.1 at 2015-05-10 18:35:48 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:35:48 +0000
+
+
+Started GET "/event_masters/28/edit" for 192.168.187.1 at 2015-05-10 18:35:53 +0000
+Processing by EventMastersController#edit as HTML
+  Parameters: {"id"=>"28"}
+  [1m[35mEventMaster Load (1.1ms)[0m  SELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1  [["id", 28]]
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mEventCategoryMapping Load (1.0ms)[0m  SELECT "event_category_mappings".* FROM "event_category_mappings"  WHERE "event_category_mappings"."event_master_id" = $1  [["event_master_id", 28]]
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mSubCategory Load (1.0ms)[0m  SELECT "sub_categories".* FROM "sub_categories"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "sub_categories".* FROM "sub_categories"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "sub_categories".* FROM "sub_categories"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sub_categories".* FROM "sub_categories"
+  Rendered event_masters/_form.html.erb (234.1ms)
+  Rendered event_masters/edit.html.erb within layouts/application (239.4ms)
+Completed 200 OK in 889ms (Views: 873.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/assets/ckeditor/config.js?t=EAPE" for 192.168.187.1 at 2015-05-10 18:35:54 +0000
+
+
+Started GET "/assets/ckeditor/lang/en.js?t=EAPE" for 192.168.187.1 at 2015-05-10 18:35:54 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/editor.css?t=EAPE" for 192.168.187.1 at 2015-05-10 18:35:55 +0000
+
+
+Started GET "/assets/ckeditor/styles.js?t=EAPE" for 192.168.187.1 at 2015-05-10 18:35:55 +0000
+
+
+Started GET "/assets/ckeditor/contents.css?t=EAPE" for 192.168.187.1 at 2015-05-10 18:35:55 +0000
+
+
+Started GET "/assets/ckeditor/plugins/link/dialogs/link.js?t=EAPE" for 192.168.187.1 at 2015-05-10 18:36:11 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/dialog.css?t=EAPE" for 192.168.187.1 at 2015-05-10 18:36:11 +0000
+
+
+Started GET "/assets/ckeditor/plugins/image/dialogs/image.js?t=EAPE" for 192.168.187.1 at 2015-05-10 18:36:23 +0000
+
+
+Started GET "/ckeditor/pictures?CKEditor=event_master_description&CKEditorFuncNum=1&langCode=en" for 192.168.187.1 at 2015-05-10 18:36:26 +0000
+Processing by Ckeditor::PicturesController#index as HTML
+  Parameters: {"CKEditor"=>"event_master_description", "CKEditorFuncNum"=>"1", "langCode"=>"en"}
+  [1m[36mCkeditor::Picture Load (1.7ms)[0m  [1mSELECT  "ckeditor_assets".* FROM "ckeditor_assets"  WHERE "ckeditor_assets"."type" IN ('Ckeditor::Picture')  ORDER BY id desc LIMIT 24 OFFSET 0[0m
+  Rendered /var/lib/gems/2.1.0/gems/ckeditor-4.1.1/app/views/ckeditor/shared/_asset.html.erb (18.3ms)
+  [1m[35m (1.2ms)[0m  SELECT COUNT(*) FROM "ckeditor_assets"  WHERE "ckeditor_assets"."type" IN ('Ckeditor::Picture')
+  Rendered /var/lib/gems/2.1.0/gems/ckeditor-4.1.1/app/views/ckeditor/pictures/index.html.erb within layouts/ckeditor/application (38.1ms)
+  Rendered /var/lib/gems/2.1.0/gems/ckeditor-4.1.1/app/views/ckeditor/shared/_asset_tmpl.html.erb (0.9ms)
+Completed 200 OK in 227ms (Views: 220.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/ckeditor/application.css?body=1" for 192.168.187.1 at 2015-05-10 18:36:26 +0000
+
+
+Started GET "/assets/ckeditor/filebrowser/stylesheets/uploader.css?body=1" for 192.168.187.1 at 2015-05-10 18:36:26 +0000
+
+
+Started GET "/assets/ckeditor/filebrowser/javascripts/jquery.tmpl.min.js?body=1" for 192.168.187.1 at 2015-05-10 18:36:26 +0000
+
+
+Started GET "/assets/ckeditor/filebrowser/javascripts/fileuploader.js?body=1" for 192.168.187.1 at 2015-05-10 18:36:26 +0000
+
+
+Started GET "/assets/ckeditor/filebrowser/javascripts/jquery.endless-scroll.js?body=1" for 192.168.187.1 at 2015-05-10 18:36:26 +0000
+
+
+Started GET "/assets/ckeditor/filebrowser/javascripts/jquery.min.js?body=1" for 192.168.187.1 at 2015-05-10 18:36:26 +0000
+
+
+Started GET "/assets/ckeditor/filebrowser/javascripts/rails.js?body=1" for 192.168.187.1 at 2015-05-10 18:36:26 +0000
+
+
+Started GET "/assets/ckeditor/filebrowser/javascripts/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:36:26 +0000
+
+
+Started GET "/assets/ckeditor/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:36:26 +0000
+
+
+Started GET "/assets/ckeditor/filebrowser/images/gal_del.png" for 192.168.187.1 at 2015-05-10 18:36:26 +0000
+
+
+Started GET "/event_masters/" for 192.168.187.1 at 2015-05-10 18:36:44 +0000
+Processing by EventMastersController#index as HTML
+  [1m[36mEventMaster Load (2.1ms)[0m  [1mSELECT "event_masters".* FROM "event_masters"[0m
+  Rendered event_masters/index.html.erb within layouts/application (128.3ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 734ms (Views: 728.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/ckeditor/init.js?body=1" for 192.168.187.1 at 2015-05-10 18:36:45 +0000
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 18:36:45 +0000
+
+
+Started GET "/images/thumb/missing.png" for 192.168.187.1 at 2015-05-10 18:36:45 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/missing.png"):
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (16.0ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (147.9ms)
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 18:36:45 +0000
+
+
+Started GET "/event_masters/29/event_ticket_types" for 192.168.187.1 at 2015-05-10 19:20:41 +0000
+Processing by EventTicketTypesController#index as HTML
+  Parameters: {"event_master_id"=>"29"}
+  [1m[36mEventMaster Load (1.9ms)[0m  [1mSELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1[0m  [["id", 29]]
+  [1m[35mEventTicketType Load (1.5ms)[0m  SELECT "event_ticket_types".* FROM "event_ticket_types"  WHERE "event_ticket_types"."event_master_id" = $1  [["event_master_id", 29]]
+  Rendered event_ticket_types/index.html.erb within layouts/application (14.2ms)
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 982ms (Views: 914.7ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/event_masters/29/event_ticket_types/new" for 192.168.187.1 at 2015-05-10 19:20:45 +0000
+Processing by EventTicketTypesController#new as HTML
+  Parameters: {"event_master_id"=>"29"}
+  [1m[35mEventMaster Load (0.9ms)[0m  SELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1  [["id", 29]]
+  Rendered event_ticket_types/_form.html.erb (66.2ms)
+  Rendered event_ticket_types/new.html.erb within layouts/application (72.5ms)
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 967ms (Views: 919.0ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/event_masters/29/event_ticket_types/new" for 192.168.187.1 at 2015-05-10 19:21:56 +0000
+Processing by EventTicketTypesController#new as HTML
+  Parameters: {"event_master_id"=>"29"}
+  [1m[35mEventMaster Load (0.6ms)[0m  SELECT  "event_masters".* FROM "event_masters"  WHERE "event_masters"."id" = $1 LIMIT 1  [["id", 29]]
+  Rendered event_ticket_types/_form.html.erb (61.3ms)
+  Rendered event_ticket_types/new.html.erb within layouts/application (67.2ms)
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 983ms (Views: 970.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/_bootstrap-custom.css?body=1" for 192.168.187.1 at 2015-05-10 19:21:57 +0000
+
+
+Started GET "/assets/list_event_master.css?body=1" for 192.168.187.1 at 2015-05-10 19:21:57 +0000
+
+
+Started GET "/assets/application.css?body=1" for 192.168.187.1 at 2015-05-10 19:21:57 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 192.168.187.1 at 2015-05-10 19:21:57 +0000
+
+
+Started GET "/assets/event_masters.css?body=1" for 192.168.187.1 at 2015-05-10 19:21:57 +0000
+
+
+Started GET "/assets/event_category_mappings.css?body=1" for 192.168.187.1 at 2015-05-10 19:21:57 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.187.1 at 2015-05-10 19:21:57 +0000
+
+
+Started GET "/assets/sub_categories.css?body=1" for 192.168.187.1 at 2015-05-10 19:21:57 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:57 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:57 +0000
+
+
+Started GET "/assets/ckeditor/init.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:57 +0000
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:57 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:58 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:58 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:58 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:58 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:58 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:58 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:58 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:58 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:58 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:58 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:58 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:58 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:59 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:59 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:59 +0000
+
+
+Started GET "/assets/event_masters.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:59 +0000
+
+
+Started GET "/assets/event_category_mappings.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:59 +0000
+
+
+Started GET "/assets/list_event_master.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:59 +0000
+
+
+Started GET "/assets/sub_categories.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:59 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 19:21:59 +0000
+
+
+Started GET "/assets/ckeditor/config.js?t=EAPE" for 192.168.187.1 at 2015-05-10 19:22:00 +0000
+
+
+Started GET "/assets/ckeditor/lang/en.js?t=EAPE" for 192.168.187.1 at 2015-05-10 19:22:00 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/editor.css?t=EAPE" for 192.168.187.1 at 2015-05-10 19:22:00 +0000
+
+
+Started GET "/assets/ckeditor/styles.js?t=EAPE" for 192.168.187.1 at 2015-05-10 19:22:00 +0000
+
+
+Started GET "/assets/ckeditor/skins/moono/icons.png" for 192.168.187.1 at 2015-05-10 19:22:00 +0000
+
+
+Started GET "/assets/ckeditor/contents.css?t=EAPE" for 192.168.187.1 at 2015-05-10 19:22:00 +0000
+
+
+Started DELETE "/users/sign_out" for 192.168.187.1 at 2015-05-10 19:22:10 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XpZEYAHoi43zrvm2iO8Uso6HxwRb5GhXZ5BDS/nFb+Y="}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://eventfunda.com:3000/
+Completed 302 Found in 99ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 192.168.187.1 at 2015-05-10 19:22:10 +0000
+Processing by ListEventMasterController#index as HTML
+  [1m[36mEventMaster Load (3.8ms)[0m  [1mSELECT  "event_masters".* FROM "event_masters"   ORDER BY updated_at asc, title desc LIMIT 10 OFFSET 0[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "event_masters"
+  Rendered event_masters/_event_master.html.erb (42.1ms)
+  Rendered list_event_master/index.html.erb within layouts/application (68.9ms)
+Completed 200 OK in 999ms (Views: 991.1ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/images/thumb/missing.png" for 192.168.187.1 at 2015-05-10 19:22:12 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/missing.png"):
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (27.6ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (206.8ms)
+
+
+Started GET "/event_masters/" for 192.168.187.1 at 2015-05-10 20:05:07 +0000
+Processing by EventMastersController#index as HTML
+  [1m[36mEventMaster Load (3.0ms)[0m  [1mSELECT "event_masters".* FROM "event_masters"[0m
+  Rendered event_masters/index.html.erb within layouts/application (324.9ms)
+Completed 200 OK in 1329ms (Views: 1316.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/event_masters.css?body=1" for 192.168.187.1 at 2015-05-10 20:05:09 +0000
+
+
+Started GET "/assets/_bootstrap-custom.css?body=1" for 192.168.187.1 at 2015-05-10 20:05:09 +0000
+
+
+Started GET "/assets/list_event_master.css?body=1" for 192.168.187.1 at 2015-05-10 20:05:09 +0000
+
+
+Started GET "/assets/categories.css?body=1" for 192.168.187.1 at 2015-05-10 20:05:09 +0000
+
+
+Started GET "/assets/event_category_mappings.css?body=1" for 192.168.187.1 at 2015-05-10 20:05:09 +0000
+
+
+Started GET "/assets/application.css?body=1" for 192.168.187.1 at 2015-05-10 20:05:09 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.187.1 at 2015-05-10 20:05:09 +0000
+
+
+Started GET "/assets/sub_categories.css?body=1" for 192.168.187.1 at 2015-05-10 20:05:09 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:09 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:09 +0000
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:09 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:09 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:09 +0000
+
+
+Started GET "/assets/ckeditor/init.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:09 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:10 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:10 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:10 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:10 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:10 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:10 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:10 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:10 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:10 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:10 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:10 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:10 +0000
+
+
+Started GET "/assets/categories.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:10 +0000
+
+
+Started GET "/assets/event_category_mappings.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:10 +0000
+
+
+Started GET "/assets/list_event_master.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:10 +0000
+
+
+Started GET "/assets/event_masters.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:10 +0000
+
+
+Started GET "/assets/application.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:10 +0000
+
+
+Started GET "/assets/sub_categories.js?body=1" for 192.168.187.1 at 2015-05-10 20:05:10 +0000
+
+
+Started GET "/images/thumb/missing.png" for 192.168.187.1 at 2015-05-10 20:05:10 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/thumb/missing.png"):
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.2ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (26.4ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /var/lib/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (155.8ms)
+
+
+Started GET "/event_masters/" for 192.168.187.1 at 2015-05-10 20:05:39 +0000
+Processing by EventMastersController#index as HTML
+  [1m[35mEventMaster Load (1.1ms)[0m  SELECT "event_masters".* FROM "event_masters"
+  Rendered event_masters/index.html.erb within layouts/application (116.7ms)
+Completed 200 OK in 657ms (Views: 654.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/event_masters/" for 192.168.187.1 at 2015-05-10 20:05:53 +0000
+Processing by EventMastersController#index as HTML
+  [1m[36mEventMaster Load (0.8ms)[0m  [1mSELECT "event_masters".* FROM "event_masters"[0m
+  Rendered event_masters/index.html.erb within layouts/application (118.1ms)
+Completed 200 OK in 642ms (Views: 639.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/event_masters/" for 192.168.187.1 at 2015-05-10 20:34:14 +0000
+Processing by EventMastersController#index as HTML
+  [1m[35mEventMaster Load (1.5ms)[0m  SELECT "event_masters".* FROM "event_masters"
+  Rendered event_masters/index.html.erb within layouts/application (126.9ms)
+Completed 200 OK in 738ms (Views: 727.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/event_masters/" for 192.168.187.1 at 2015-05-10 20:36:09 +0000
+Processing by EventMastersController#index as HTML
+  [1m[36mEventMaster Load (1.1ms)[0m  [1mSELECT "event_masters".* FROM "event_masters"[0m
+  Rendered event_masters/index.html.erb within layouts/application (136.4ms)
+Completed 200 OK in 673ms (Views: 669.8ms | ActiveRecord: 1.1ms)

@@ -39,6 +39,9 @@ GEM
     bootstrap-sass-extras (0.0.6)
       rails (>= 3.1.0)
     builder (3.2.2)
+    ckeditor (4.1.1)
+      cocaine
+      orm_adapter (~> 0.5.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.7)
@@ -160,6 +163,7 @@ DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass (~> 3.3.4)
   bootstrap-sass-extras
+  ckeditor
   coffee-rails (~> 4.0.0)
   devise
   execjs

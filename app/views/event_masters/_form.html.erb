@@ -1,6 +1,4 @@
-<script
 
-></script>
 
  <%= semantic_form_for @event_master, :input_html => {:multiple => true}   do |f| %>
   
@@ -12,7 +10,7 @@
     <%= f.input :url %>
   </div>
   <div class="field">
-    <%= f.input :description %>
+    <%= f.input :description, :as => :ckeditor %>
   </div>
   <div class="field">
     <%= f.input :capacity %>

@@ -1,6 +1,6 @@
 class EventMastersController < ApplicationController
   before_action :set_event_master, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!,only: [:show, :edit, :update, :destroy]
 
   respond_to :html
 
