@@ -1,13 +1,12 @@
 class EventMaster < ActiveRecord::Base
   
+  has_many :user ,through: :event_bookings
 
-
-
-
-  belongs_to :user
   has_many :event_category_mappings
   has_many :event_ticket_types
-  accepts_nested_attributes_for  :event_category_mappings
+  has_many :event_bookings ,through: :event_ticket_types
+
+  accepts_nested_attributes_for  :event_category_mappings,:event_ticket_types
   has_attached_file :image, 
   :styles => {
   :thumb    => ['100x100#',  :jpg, :quality => 70],

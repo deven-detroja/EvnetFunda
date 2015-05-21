@@ -18,7 +18,12 @@
    <div class="field">
     <%= f.input :max %>
   </div>
-  
+  <div class="field">
+    <%= f.input :start_time %>
+  </div>
+  <div class="field">
+  <%= f.input :end_time %>
+  </div>
   <%= f.actions do %>
       <%= f.action :submit, :as => :button %>
       <%= f.action :cancel, :as => :link %>

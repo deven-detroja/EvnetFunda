@@ -75,6 +75,6 @@ class EventTicketTypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_ticket_type_params
-      params.require(:event_ticket_type).permit(:name, :description, :price, :min, :max,:event_master_id)
+      params.require(:event_ticket_type).permit(:name, :description, :price, :min, :max,:event_master_id,:start_time,:end_time)
     end
 end

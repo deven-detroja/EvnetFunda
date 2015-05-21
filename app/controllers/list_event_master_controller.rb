@@ -10,10 +10,15 @@ class ListEventMasterController < ApplicationController
   end
 
   def show
-
-  	 respond_with(@event_master)
+    #@event_booking = @event_master.event_bookings.build
+    #@event_master.event_ticket_types.each do |et|
+     #   @event_booking.event_ticket_type.build
+    #end   
+ respond_with(@event_master)
+  	#respond_with(@event_booking)
 
   end
+
 
 private
     def set_event_master

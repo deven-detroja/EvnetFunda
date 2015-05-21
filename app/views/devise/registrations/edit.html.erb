@@ -35,16 +35,39 @@
     <%= f.input :mobile%>
   </div>
   <div class="field">
-    <%= f.label :sex %><br />
-    
-	<%=f.input :sex,:as => :radio, :collection => ['Male', 'Female']%>
-	
-  </div>
+  <%= f.label :sex %><br />
+  <%=f.input :sex,:as => :radio, :collection => ['Male', 'Female']%>
+	</div>
    <div class="field">
     <%= f.label :dob %><br />
     <%= f.input :dob %>
   </div>
 
+<div class="field">
+    <%= f.label :address_one %><br />
+    <%= f.text_field :address_one, autocomplete: "off" %>
+  </div>
+  <div class="field">
+    <%= f.label :address_two %><br />
+    <%= f.text_field :address_two, autocomplete: "off" %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city, autocomplete: "off" %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state, autocomplete: "off" %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= f.text_field :country, autocomplete: "off" %>
+  </div>
+  <div class="field">
+    <%= f.label :postal_code %><br />
+    <%= f.text_field :postal_code, autocomplete: "off" %>
+  </div>
+  
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

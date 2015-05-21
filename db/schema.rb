@@ -51,6 +51,21 @@ ActiveRecord::Schema.define(version: 20150510182924) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
+  create_table "event_bookings", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "event_master_id"
+    t.integer  "event_ticket_type_id"
+    t.integer  "quantity"
+    t.float    "gross_total"
+    t.string   "payment_status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "event_bookings", ["event_master_id"], name: "index_event_bookings_on_event_master_id", using: :btree
+  add_index "event_bookings", ["event_ticket_type_id"], name: "index_event_bookings_on_event_ticket_type_id", using: :btree
+  add_index "event_bookings", ["user_id"], name: "index_event_bookings_on_user_id", using: :btree
+
   create_table "event_category_mappings", force: true do |t|
     t.integer  "categories_id"
     t.integer  "sub_categories_id"
@@ -93,6 +108,12 @@ ActiveRecord::Schema.define(version: 20150510182924) do
     t.string   "banner_image_content_type"
     t.integer  "banner_image_file_size"
     t.datetime "banner_image_updated_at"
+    t.string   "address_one"
+    t.string   "address_two"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "postal_code"
   end
 
   add_index "event_masters", ["user_id"], name: "index_event_masters_on_user_id", using: :btree
@@ -157,6 +178,14 @@ ActiveRecord::Schema.define(version: 20150510182924) do
     t.integer  "failed_attempts",        default: 0
     t.string   "unlock_token"
     t.datetime "locked_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "address_one"
+    t.string   "address_two"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "postal_code"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

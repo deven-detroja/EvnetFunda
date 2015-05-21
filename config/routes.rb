@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   root 'list_event_master#index'
 
   #get 'list_event_master/show'
-  resources :list_event_master
+  resources :list_event_master do
+    get "book_event"
+  end
+
+  resources :event_bookings
 
   resources :event_category_mappings
 
@@ -20,6 +24,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users
+
+  
+
 
   
   resources :status_masters
